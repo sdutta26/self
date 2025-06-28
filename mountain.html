@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tour</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Remixicon & Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f6fc;
+      color: #333;
+    }
+
+    nav {
+      background-color: #007bff;
+      padding: 12px 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 25px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #cce5ff;
+    }
+
+    .section__container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section__header {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .section__description {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .journey__grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .journey__card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      width: 300px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .journey__card:hover {
+      transform: translateY(-5px);
+    }
+
+    .journey__card h4 {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .showcase__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .destination-card {
+      background-color: white;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .destination-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .destination-card h3 {
+      font-size: 22px;
+      margin-top: 15px;
+    }
+
+    .destination-card p {
+      font-size: 15px;
+      color: #666;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #e84118;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background-color: #ff5733;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #ff3b00;
+    }
+
+    @media (max-width: 768px) {
+      .destination-card {
+        width: 100%;
+      }
+
+      .showcase__container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+   
+    <a href="tour.html">Tour</a>
+     
+    <a href="ab.html">About </a>
+    <a href="contact.html">contact</a>
+  </nav>
+ 
+
+   <!-- ✅ Destination Packages Section -->
+  <section class="section__container showcase__container" id="destination">
+    <h2 class="section__header">Explore Our Top Destinations</h2>
+    <p class="section__description">Choose your next dream destination and book your trip!</p>
+
+     
+    <!-- kashmir -->
+      <div class="destination-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSlZKAnfLTaRZPn0nLMmU2UrXIvyC3jPxt5g&s" alt="kashmir"/>
+        <h3>1.kashmir</h3>
+        <p> Kashmir is a breathtaking region in northwestern India
+        </p>
+        <div class="price">RS.30,000 per person</div>
+        <a href="trip1.html?destination=Kashmir&price=30000">
+  <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+</a>
+
+        <div class="service-item">
+                <i class="fas fa-map-signs"></i>
+                <h3>Travel Guide</h3>
+               
+                <a href="kashmir.html">Read more</a>
+            </div>
+      </div>
+
+<!-- Darjeeling -->
+      <div class="destination-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnCwjUTw_erO7WhcoY4bdMan-IBRJblIAtKg&s" alt=" Darjeeling " />
+        <h3>2. Darjeeling,West bengal </h3>
+        <p> Darjeeling one of the most beautiful hill stations in Eastern part of India.
+        </p>
+        <div class="price">Rs.15,000 per person</div>
+        <a href="trip1.html?destination=Darjeeling&price=15000">
+  <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+</a>
+        <div class="service-item">
+                <i class="fas fa-map-signs"></i>
+                <h3>Travel Guide</h3>
+               
+                <a href="darjeelinh.html">Read more</a>
+            </div>
+      </div>
+
+
+      <!-- Munner,Kerala -->
+      <div class="destination-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy_QqhjLBgzALOJfyyot9n79Qp5sF4RfNz2g&s" alt="Munner  " />
+        <h3>3. Munner,Kerala</h3>
+        <p> Famous for the tea 
+        </p>
+        <div class="price">Rs.20,000 per person</div>
+       <a href="trip1.html?destination=Munnar&price=20000">
+  <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+</a>
+        <div class="service-item">
+                <i class="fas fa-map-signs"></i>
+                <h3>Travel Guide</h3>
+               
+                <a href="munnar.html">Read more</a>
+            </div>
+      </div>
+
+
+      <!--Manali,Himachal Pradesh -->
+      <div class="destination-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdaT6LbiDLUbu4FPrlpNhLUa5DWWfE0qLDuQ&s" alt="Manali " />
+        <h3>4.Manali,Himachal Pradesh</h3>
+        <p>Manali is one of the most popular hill stations in India. 
+        </p>
+        <div class="price">Rs.21,000 per person</div>
+        <a href="trip1.html?destination=Manali&price=21000">
+  <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+</a>
+
+        <div class="service-item">
+                <i class="fas fa-map-signs"></i>
+                <h3>Travel Guide</h3>
+                
+                <a href="manali.html">Read more</a>
+            </div>
+      </div>
+
+
+      <!--Gangtok,Sikkim -->
+      <div class="destination-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz3fLIohaYkTL6gaLyC5K7G0k11L7Z1zbiLQ&s" alt="Gangtok " />
+        <h3>5.Gangtok,Sikkim</h3>
+        <p>Incredibly alluring, pleasantly boisterous and wreathed in clouds - Gangtok
+        </p>
+        <div class="price">rs.17,000 per person</div>
+        <a href="trip1.html?destination=Gangtok&price=17000">
+  <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+</a>
+        <div class="service-item">
+                <i class="fas fa-map-signs"></i>
+                <h3>Travel Guide</h3>
+               
+                <a href="gangtok.html">Read more</a>
+            </div>
+      </div>
+
+
+
+      <!--Shillong,Meghalaya -->
+      <div class="destination-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaz-y5U9xzzWU0TuYTZl6VZhW2Q9XvRHAuBg&s" alt="Shillong " />
+        <h3>6.Shillong,Meghalaya </h3>
+        <p>Nestled amidst pine trees, Shillong, the capital of Meghalaya, is a charming hill station in India.
+        </p>
+        <div class="price">Rs.16,000 per person</div>
+        <a href="trip1.html?destination=Shillong&price=16000">
+  <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+</a>
+
+        <div class="service-item">
+                <i class="fas fa-map-signs"></i>
+                <h3>Travel Guide</h3>
+               
+                <a href="shillong.html">Read more</a>
+            </div>
+      </div>
+
+
+       <!--7.Leh -->
+      <div class="destination-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9QvO8QeIDJomD6Pa5PL1Isf4Qp15ylRFLTQ&s" alt="Leh  " />
+        <h3>7.Leh </h3>
+        <p>Popularly known as a biker's paradise, Leh is one of the two capitals of Ladakh that has numerous passes linking various locations in the challenging terrain
+        </p>
+       <div class="price">Rs.26,000 per person</div>
+        <a href="trip1.html?destination=Leh&price=26000">
+  <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+</a>
+        <div class="service-item">
+                <i class="fas fa-map-signs"></i>
+                <h3>Travel Guide</h3>
+               
+                <a href="leh.html">Read more</a>
+            </div>
+      </div>
+    </section>
+  </body>
+  </html>

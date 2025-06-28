@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Welcome to Travelia</title>
+<style>
+  /* Import a modern Google Font */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  /* Reset and base styles */
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    color: white;
+    overflow: hidden;
+  }
+
+  /* Container for the entire content */
+  .container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* Welcome section */
+  #welcome-section {
+    text-align: center;
+    animation: fadeInMove 3s ease forwards;
+  }
+
+  #welcome-section h1 {
+    font-size: 3.5rem;
+    letter-spacing: 0.1em;
+    margin: 0 0 20px 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  }
+
+  #welcome-section p {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.85;
+  }
+
+  /* Animated shapes around welcome text */
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255 255 255 / 0.15);
+    animation: floatUpDown 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px rgba(255 255 255 / 0.2));
+  }
+
+  .shape1 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+  .shape2 {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: 15%;
+    animation-delay: 2s;
+  }
+  .shape3 {
+    width: 40px;
+    height: 40px;
+    bottom: 25%;
+    left: 30%;
+    animation-delay: 4s;
+  }
+
+  @keyframes fadeInMove {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes floatUpDown {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-20px);
+      opacity: 1;
+    }
+  }
+
+  /* Login section - hidden initially */
+  #login-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(255 255 255 / 0.1);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgb(0 0 0 / 0.3);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    width: 320px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease, transform 1s ease;
+    user-select: none;
+  }
+  #login-section.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    user-select: auto;
+  }
+
+  #login-section h2 {
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    user-select: none;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background: rgba(255 255 255 / 0.2);
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  .form-group input::placeholder {
+    color: #ddd;
+  }
+  .form-group input:focus {
+    background: rgba(255 255 255 / 0.35);
+  }
+
+  button.login-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    background: #00b4db;
+    background: linear-gradient(90deg, #00b4db 0%, #0083b0 100%);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgb(0 180 219 / 0.4);
+    transition: background 0.3s ease;
+  }
+  button.login-btn:hover {
+    background: linear-gradient(90deg, #0083b0 0%, #00b4db 100%);
+  }
+
+  /* Social login buttons container */
+  .social-login {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.25);
+    user-select: none;
+  }
+  .social-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Google button */
+  .google-btn {
+    background: #4285f4;
+  }
+  .google-btn:hover {
+    background: #357ae8;
+  }
+
+  /* Facebook button */
+  .facebook-btn {
+    background: #1877f2;
+  }
+  .facebook-btn:hover {
+    background: #145dbf;
+  }
+
+  /* Responsive */
+  @media (max-width: 400px) {
+    #login-section {
+      width: 90%;
+      padding: 25px 20px;
+    }
+    #welcome-section h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+
+    <section id="welcome-section">
+      <h1>Welcome to Travelia</h1>
+      <p>Your adventure begins here...</p>
+      <p>Thank You for Choosing Us...</p>
+    </section>
+
+    <section id="login-section" aria-label="Login Form">
+      <h2>Login</h2>
+      <form id="login-form" autocomplete="off" novalidate>
+        <div class="form-group">
+          <label for="username">Username or Email</label>
+          <input type="text" id="username" name="username" required placeholder="Enter your username or email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required placeholder="Enter your password" />
+        </div>
+        <a href="index.html">
+        <button type="button" class="login-btn">Log In</button>
+      </a>
+      </form>
+
+     
+
+  <script>
+    // After the welcome animation finishes, transition to login form
+    const welcomeSection = document.getElementById('welcome-section');
+    const loginSection = document.getElementById('login-section');
+
+    function showLogin() {
+      // Hide welcome
+      welcomeSection.style.transition = 'opacity 1s ease';
+      welcomeSection.style.opacity = '0';
+
+      // After fade out welcome, show login
+      setTimeout(() => {
+        welcomeSection.style.display = 'none';
+        loginSection.classList.add('active');
+      }, 1000);
+    }
+
+    // Show login after 4 seconds delay (animation time + some pause)
+    setTimeout(showLogin, 4000);
+
+    // Simple form submission handler
+    const loginForm = document.getElementById('login-form');
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Welcome back, ' + loginForm.username.value + '!');
+      loginForm.reset();
+    });
+
+    // Social button click handlers (dummy)
+    const googleBtn = document.getElementById('google-btn');
+    googleBtn.addEventListener('click', () => {
+      alert('Google login clicked. Implement OAuth flow here.');
+    });
+
+    const facebookBtn = document.getElementById('facebook-btn');
+    facebookBtn.addEventListener('click', () => {
+      alert('Facebook login clicked. Implement OAuth flow here.');
+    });
+  </script>
+</body>
+</html>

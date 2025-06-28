@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golden Temple Travel Essentials</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #fafbfc;
+      height: 100%;
+    }
+
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      height: 48px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: #0077cc;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .navbar a.active {
+      font-weight: 600;
+      border-bottom: 2px solid #0077cc;
+      color: #222;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      margin: 16px 0;
+      color: #222;
+    }
+
+    .info {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .info p {
+      font-size: 15px;
+      color: #444;
+      margin: 5px 0;
+    }
+
+    .attraction-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f2f2f2;
+      margin: 24px 0;
+      text-align: left;
+    }
+
+    .attraction-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .attraction-card .content {
+      padding: 16px;
+    }
+
+    .tourism-desc {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .readMoreLink {
+      color: #0077cc;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .moreText {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 20px;
+        border-radius: 0;
+        padding: 20px 10px;
+      }
+
+      .slideshow-container img {
+        height: 250px !important;
+      }
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      user-select: none;
+      transform: translateY(-50%);
+      z-index: 5;  /* Added to appear above images */
+    }
+
+    .prev {
+      left: 16px;
+    }
+
+    .next {
+      right: 16px;
+    }
+
+    .fade {
+      animation: fadeEffect 1s;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 16px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns = 2 rows for 6 items */
+      gap: 20px;
+      padding: 0 12px;
+      justify-items: center;
+    }
+
+    .place-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      width: 100%;
+    }
+
+
+    .place-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .attraction-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+    .place-card p {
+      padding: 10px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 16px 8px;
+      }
+
+      .section {
+        padding: 16px 8px;
+      }
+
+      .essentials-box {
+        padding: 14px 8px;
+      }
+
+      .places-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="tour.html" class="active">Tour</a>
+    <a href="temple.html" class="active">Back to Temple</a>
+   
+  </div>
+
+  <div class="container">
+    <h1>Madurai Meenakshi Amman Temple</h1>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAlI4nJm3Zwy_ZMJq08iQ1MspeamJkhOru3g&s" alt="Golden Temple 1">
+        <div class="overlay-text">2 Days/1 Nights</div>
+      </div>
+      <div class="slide fade">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAJgojTE_vME6tid_RUotb2tjMCul13nLDFA&s" alt="Golden Temple 2">
+        <div class="overlay-text">2Days/1 Nights</div>
+      </div>
+     
+
+      <!-- Arrows inside the slideshow container -->
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <div class="info">
+      <h2>Meenakshi Temple, Madurai</h2>
+      <div class="info">
+        <p><strong>Label:</strong> Top Attraction</p>
+        <p><strong>Tags:</strong> Temple</p>
+        <p><strong>Timings:</strong> 9:00 AM - 7:00 PM</p>
+        <p><strong>Time Required:</strong> 1 - 2 hours</p>
+        <p><strong>Entry Fee:</strong> No entry fee</p>
+        <p><strong>Architecture:</strong> Dravidian Style</p>
+        <p><strong>Height:</strong> 160 feet</p>
+        <p><strong>Built:</strong> The existent structure was built between 1623 and 1655</p>
+        <p><strong>Mobile Phones:</strong> Not allowed</p>
+        <p><strong>Also Referred As:</strong> Sri Meenakshi Temple</p>
+      </div>
+    </div>
+
+    <h2>Golden Temple, Amritsar Overview</h2>
+    <div class="tourism-desc">
+      One of the most spiritual places in India, the Golden Temple, also known as Sri Harmandir Sahib, is the holiest shrine in all of Sikhism...
+      <span class="dots">...</span>
+      <span class="moreText">
+        The temple is open to devotees of all faiths and serves over 100,000 people free food from all walks of life.
+        <br><br>
+        The main temple housing the shrine is a small part of the vast complex known as Harmandir Sahib or Darbar Sahib. The spiritual focus is the tank, the Amrit Sarovar, which surrounds the glistening central shrine. The Sikh Museum inside the clock tower shows the oppression endured by Sikhs. Ramgarhia Bunga is a protective fortress near two Islamic-style minarets.
+      </span>
+      <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+    </div>
+
+    <div class="attraction-card">
+      <h3>1.Meenakshi Temple, Madurai </h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfcHaGSaoY13nh9cCCPZHukJDPuQruan_ig&s" alt="Guru Granth Sahib">
+      <div class="content">
+        <div class="tourism-desc">
+           The historic Meenakshi Amman temple is located on the southern bank of the Vaigai River, Madurai, Tamil Nadu. Built sometime between the year 1623 and 1655, the wonderful architecture of the place is renowned globally.
+          <span class="dots">...</span>
+          <span class="moreText">
+           Meenakshi Temple is primarily dedicated to Parvati, known as Meenakshi, and her spouse, Shiva. What makes this temple different from the others is the fact that both God and Goddess are worshipped together.
+
+The most striking feature of the temple is its exquisite facade, which has highly minute details with great art pieces incorporated in the walls and pillars. Meenakshi Amman temple complex is made in accordance to the Shilpa Shastra and has 14 gateway towers or 'gopurams', golden 'vimanas', holy sanctums and shrines dedicated to the revered Goddess Meenakshi and many others. It is a major tourist attraction, with thousands of devotees visiting the shrine on a daily basis. 
+          </span>
+          <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+        </div>
+      </div>
+    </div>
+
+   <h1>Places To Visit In </h1>
+      <div class="places-grid">
+        <div class="place-card">
+          <img src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Thirumalai_Nayakkar_Mahal_ade59b4a73.webp"/>
+          <p> Thirumalai Nayakkar Mahal</p>
+        </div>
+        <div class="place-card">
+          <img src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Vaigai_Dam_1300fa4929.webp"/>
+          <p>Vaigai Dam</p>
+        </div>
+         <div class="place-card">
+          <img src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Gandhi_Memorial_Museum_21d22f88de.webp"/>
+          <p> Gandhi Memorial Museum</p>
+        </div>
+        <div class="place-card">
+          <img src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Alagar_Kovil_32f658459c.webp"/>
+          <p> Alagar Kovil</p>
+        </div>
+        
+        <div class="place-card">
+          <img src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Samanar_Hills_826dcf9348.webp"/>
+          <p>Samanar Hills</p>
+        </div>
+         <div class="place-card">
+          <img src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Koodal_Azhagar_Temple_2406826651.webp"/>
+          <p> Koodal Azhagar Temple</p>
+        </div> <div class="place-card">
+          <img src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Rajaji_Park_6bf84ec715.webp"/>
+          <p> Rajaji Park</p>
+        </div>
+      </div>
+
+
+  <script>
+    function toggleReadMore(link) {
+      const parent = link.closest(".tourism-desc");
+      const moreText = parent.querySelector(".moreText");
+      const dots = parent.querySelector(".dots");
+
+      if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "inline";
+        dots.style.display = "none";
+        link.textContent = "Read Less";
+      } else {
+        moreText.style.display = "none";
+        dots.style.display = "inline";
+        link.textContent = "Read More";
+      }
+    }
+
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlide(index) {
+      if (index >= slides.length) slideIndex = 0;
+      if (index < 0) slideIndex = slides.length - 1;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slides[slideIndex].style.display = "block";
+    }
+
+    function changeSlide(n) {
+      slideIndex += n;
+      showSlide(slideIndex);
+    }
+
+    // Initialize slideshow
+    showSlide(slideIndex);
+  </script>
+
+</body>
+</html>

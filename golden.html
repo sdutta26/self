@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golden Temple Travel Essentials</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #fafbfc;
+      height: 100%;
+    }
+
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      height: 48px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: #0077cc;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .navbar a.active {
+      font-weight: 600;
+      border-bottom: 2px solid #0077cc;
+      color: #222;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      margin: 16px 0;
+      color: #222;
+    }
+
+    .info {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .info p {
+      font-size: 15px;
+      color: #444;
+      margin: 5px 0;
+    }
+
+    .attraction-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f2f2f2;
+      margin: 24px 0;
+      text-align: left;
+    }
+
+    .attraction-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .attraction-card .content {
+      padding: 16px;
+    }
+
+    .tourism-desc {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .readMoreLink {
+      color: #0077cc;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .moreText {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 20px;
+        border-radius: 0;
+        padding: 20px 10px;
+      }
+
+      .slideshow-container img {
+        height: 250px !important;
+      }
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      user-select: none;
+      transform: translateY(-50%);
+    }
+
+    .prev {
+      left: 16px;
+    }
+
+    .next {
+      right: 16px;
+    }
+
+    .fade {
+      animation: fadeEffect 1s;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+
+    .overlay-text {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="tour.html" class="active">Tour</a>
+    <a href="temple.html" class="active">Back to Temple</a>
+
+  </div>
+
+  <div class="container">
+    <h1>Golden Temple</h1>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShoOcejq7iHHoapoTciH74ray-81_sPQk3wg&s" alt="Golden Temple 1">
+          <div class="overlay-text">4 Days/3 Nights</div>
+      </div>
+      <div class="slide fade">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPhdeGne2Nv0V1RNj39o6nPCfTON0yIWrtCw&s" alt="Golden Temple 2"> <div class="overlay-text">4 Days/3 Nights</div>
+      </div>
+      <div class="slide fade">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReELyxeuuhTVoXH_t9zaklnx6tAcKM0J__8w&s" alt="Golden Temple 3"> <div class="overlay-text">4 Days/3 Nights</div>
+      </div>
+      <div class="slide fade">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCxQQ0ey5L7pRwaK1LPSf82_h6oxLhOvHP7Q&s" alt="Golden Temple 4"> <div class="overlay-text">4 Days/3 Nights</div>
+      </div>
+      <div class="slide fade">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWzg6ep1BfPDr5bYzziJ6mJqSlBxmcwjB4Tw&s" alt="Golden Temple 5"> <div class="overlay-text">4 Days/3 Nights</div>
+      </div>
+
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <div class="info">
+      <h2>Golden Temple, Amritsar</h2>
+      <p><strong>Label:</strong> Top Attraction</p>
+      <p><strong>Tags:</strong> Gurudwara</p>
+      <p><strong>Timings:</strong> 04:00 AM to 11:00 PM</p>
+      <p><strong>Time Required:</strong> 2 - 3 hours</p>
+      <p><strong>Entry Fee:</strong> No entry fee</p>
+      <p><strong>Also Referred As:</strong> Sri Harmandir Sahib</p>
+    </div>
+
+    <h2>Golden Temple, Amritsar Overview</h2>
+    <div class="tourism-desc">
+      One of the most spiritual places in India, the Golden Temple, also known as Sri Harmandir Sahib, is the holiest shrine in all of Sikhism...
+      <span class="dots">...</span>
+      <span class="moreText">
+        The temple is open to devotees of all faiths and serves over 100,000 people free food from all walks of life.
+        <br><br>
+        The main temple housing the shrine is a small part of the vast complex known as Harmandir Sahib or Darbar Sahib. The spiritual focus is the tank, the Amrit Sarovar, which surrounds the glistening central shrine. The Sikh Museum inside the clock tower shows the oppression endured by Sikhs. Ramgarhia Bunga is a protective fortress near two Islamic-style minarets.
+      </span>
+      <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+    </div>
+
+    <div class="attraction-card">
+      <h3>1. The Guru Granth Sahib</h3>
+      <img src="https://thursd.com/storage/media/59116/The-Guru-Granth-Sahib-is-the-Holy-scripture-of-Sikhism.jpg" alt="Guru Granth Sahib">
+      <div class="content">
+        <div class="tourism-desc">
+          The Guru Granth Sahib is placed inside the temple premises every morning and returned to the Akal Takhat every night.
+          <span class="dots">...</span>
+          <span class="moreText">
+            This ceremony is called the Palki Sahib, and it provides male visitors with a chance to participate in the veneration of this holy book. The Guru Granth Sahib is carried in a heavy palanquin.
+          </span>
+          <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <h3>2. Guru-Ka-Langar</h3>
+      <img src="https://www.holidify.com/images/cmsuploads/compressed/dsc_0259_20231201121817.jpg" alt="Guru-Ka-Langar">
+      <div class="content">
+        <div class="tourism-desc">
+          Guru-Ka-Langar is an enormous dining room where 60,000 to 80,000 pilgrims a day come to eat after praying.
+          <span class="dots">...</span>
+          <span class="moreText">
+            The food is free of charge, but the pilgrims often make donations and offer help with the staggering pile of dishes to be washed.
+          </span>
+          <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleReadMore(link) {
+      const parent = link.closest(".tourism-desc");
+      const moreText = parent.querySelector(".moreText");
+      const dots = parent.querySelector(".dots");
+
+      if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "inline";
+        dots.style.display = "none";
+        link.textContent = "Read Less";
+      } else {
+        moreText.style.display = "none";
+        dots.style.display = "inline";
+        link.textContent = "Read More";
+      }
+    }
+
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlide(index) {
+      if (index >= slides.length) slideIndex = 0;
+      if (index < 0) slideIndex = slides.length - 1;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slides[slideIndex].style.display = "block";
+    }
+
+    function changeSlide(n) {
+      slideIndex += n;
+      showSlide(slideIndex);
+    }
+
+    // Initialize slideshow
+    showSlide(slideIndex);
+  </script>
+
+</body>
+</html>

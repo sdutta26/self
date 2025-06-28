@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natural Wonders</title>
+  
+<style>
+  body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+ body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f6fc;
+      color: #333;
+    }
+
+    nav {
+      background-color: #007bff;
+      padding: 12px 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 25px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #cce5ff;
+    }
+
+
+.page-header {
+  background: url('images/nature-banner.jpg') center/cover no-repeat;
+  padding: 5rem 2rem;
+  text-align: center;
+  color: #fff;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  font-size: 1.25rem;
+}
+
+.wonders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+.wonder-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.wonder-card:hover {
+  transform: translateY(-5px);
+}
+
+.wonder-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.wonder-card h3 {
+  margin: 1rem;
+}
+
+.wonder-card p {
+  margin: 0 1rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+.page-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #eee;
+  font-size: 1rem;
+}
+
+</style>
+
+  
+</head>
+<body>
+
+ <!-- ✅ Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+   
+    <a href="tour.html">Tour</a>
+    <a href="ab.html">About </a>
+    <a href="contact.html">contact</a>
+  </nav>
+
+  <header class="page-header">
+    <h1>Natural Wonders of india</h1>
+    <p>Explore the most awe-inspiring natural destinations across the nation.</p>
+  </header>
+
+  <section class="wonders-grid">
+    
+    <div class="wonder-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3kbLkgRFnGxUU6ScCpre3NhATlqWzQYevfw&s" alt="Majestic Mountains" />
+      <h3>Majestic Mountains</h3>
+      <p>Hike through scenic mountain ranges and enjoy breathtaking views and fresh air.</p>
+    </div>
+
+    <div class="wonder-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYIinsC2xGXDUV7zsZig7j50Su7Req3wLpoA&s" alt="Hidden Waterfalls" />
+      <h3>Hidden Waterfalls</h3>
+      <p>Discover serene waterfalls tucked away in lush forests and valleys.</p>
+    </div>
+
+    <div class="wonder-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLThgWfl6L2BaeegU6exLZZTvUuAMg20ubTA&s" alt="Coastal Escapes" />
+      <h3>Coastal Escapes</h3>
+      <p>Relax on pristine beaches and explore the beautiful coastlines of your country.</p>
+    </div>
+
+    <div class="wonder-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWIYJzzVKJJ44xfr1_1OJv7o1OTK2GM5P4Uw&s" alt="National Forests" />
+      <h3>National Forests</h3>
+      <p>Reconnect with nature in vast forests rich with wildlife, trails, and peace.</p>
+    </div>
+
+    <div class="wonder-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZU-9H8_SDcymh5QMYnSF2Sp_gLiN7Bxfrw&s" alt="Desert Landscapes" />
+      <h3>Desert Landscapes</h3>
+      <p>Marvel at the beauty of golden dunes and dramatic skies in desert regions.</p>
+    </div>
+
+    <div class="wonder-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyPi6WrTR9vKcU1opuGsE7HHUpqKHDTh4k-w&s" alt="Tranquil Lakes" />
+      <h3>Tranquil Lakes</h3>
+      <p>Kayak, fish, or unwind by crystal-clear lakes surrounded by nature.</p>
+    </div>
+
+  </section>
+
+ 
+</body>
+</html>

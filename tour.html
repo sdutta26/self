@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tour</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Remixicon & Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f6fc;
+      color: #333;
+    }
+
+    nav {
+      background-color: #007bff;
+      padding: 12px 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 25px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #cce5ff;
+    }
+
+    .section__container {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section__header {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: #333;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    .section__header::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #007bff;
+      margin: 10px auto 0 auto;
+      border-radius: 4px;
+    }
+
+    .section__description {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .journey__grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .journey__card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      width: 300px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .journey__card:hover {
+      transform: translateY(-5px);
+    }
+
+    .journey__card h4 {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #2a2a2a;
+      font-weight: 600;
+    }
+
+    .journey__card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .journey__card-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .journey__card-link:hover {
+      background: #0056b3;
+    }
+
+    /* Tour Type Section */
+    .tour-type-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+      background: #fafbfc;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .tour-type-wrapper {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .tour-type-heading {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .subtitle {
+      color: #38b6ff;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .tour-types {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .tour-card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+      padding: 24px 24px 16px 24px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 180px;
+      text-align: center;
+    }
+
+    .tour-card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 8px 32px rgba(56, 182, 255, 0.14);
+    }
+
+    .tour-img {
+      width: 100px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%/40%;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    }
+
+    .tour-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .tour-count {
+      color: #888;
+      font-size: 0.98rem;
+    }
+
+    /* Auto Scrolling Carousel */
+    .carousel-container {
+      width: 100vw;
+      overflow: hidden;
+      padding: 40px 0;
+      background: #fff;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: calc(300px * 20);
+      animation: scroll-left 18s linear infinite;
+    }
+
+    .carousel-image {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      flex-shrink: 0;
+      margin-right: 8px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+      background: #eee;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .destination-card, .journey__card {
+        width: 100%;
+      }
+
+      .showcase__container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .carousel-image {
+        width: 220px;
+        height: 280px;
+      }
+
+      .carousel-track {
+        width: calc(220px * 20);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .carousel-image {
+        width: 140px;
+        height: 120px;
+      }
+
+      .carousel-track {
+        width: calc(140px * 20);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tour.html">Tour</a>
+    <a href="ab.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Tour Highlights -->
+  <section class="section__container journey__container" id="tour">
+    <h2 class="section__header">Journey To The Sky Made Simple!</h2>
+    <p class="section__description">Effortless Planning for Your Next Adventure</p>
+    <div class="journey__grid">
+      <div class="journey__card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJN9HXG-w5lC_NQKlTvwi0iNzVYFGRfmJtw&s"
+             alt="Natural Wonders" style="width:100%; border-radius: 8px; object-fit: cover; height: 180px; margin-bottom: 15px;">
+        <i class="ri-landscape-line" style="font-size: 28px;"></i>
+        <h4>Natural Wonders</h4>
+        <p>Visit breathtaking mountains, beaches, forests, and national parks.</p>
+        <a href="naturalwonders.html" class="journey__card-link">India</a>
+      </div>
+
+      <div class="journey__card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwJFpqp2MzBo9Mo0Z-SORFHAwkxXZq7S3UwA&s"
+             alt="Gallery" style="width:100%; border-radius: 8px; object-fit: cover; height: 180px; margin-bottom: 15px;">
+        <i class="ri-bookmark-3-line" style="font-size: 28px;"></i>
+        <h4>Gallery</h4>
+        <p>Beautifully showcase tour photos</p>
+        <a href="Gallery.html" class="journey__card-link">India</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pick A Tour Type (Centered) -->
+  <section class="section__container tour-type-section">
+    <div class="tour-type-wrapper">
+      <div class="subtitle">Tour Type</div>
+      <h1 class="tour-type-heading">Pick A Tour Type</h1>
+      <div class="tour-types">
+        <div class="tour-card" onclick="location.href='mountain.html'">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=560&q=80"
+               alt="Mountain Climbing" class="tour-img">
+          <div class="tour-title">Mountain Climbing</div>
+          <div class="tour-count">7 Tours+</div>
+        </div>
+        <div class="tour-card" onclick="location.href='temple.html'">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGMaGdexBqmuHaNOL8XXeK50uj8fkx_Hnl-w&s"
+               alt="Temple Tours" class="tour-img">
+          <div class="tour-title">Temple Tours</div>
+          <div class="tour-count">4 Tours+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auto-Scrolling Carousel -->
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" class="carousel-image" alt="Travel 1">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" class="carousel-image" alt="Travel 2">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" class="carousel-image" alt="Travel 3">
+      <img src="https://images.unsplash.com/photo-1465156799763-2c087c332922?auto=format&fit=crop&w=600&q=80" class="carousel-image" alt="Travel 4">
+      <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" class="carousel-image" alt="Travel 5">
+      <img src="https://images.unsplash.com/photo-1424746219973-8fe3bd07d8e3?auto=format&fit=crop&w=600&q=80" class="carousel-image" alt="Travel 6">
+      <img src="https://img.freepik.com/free-photo/traveling-concept-with-landmarks_23-2149153261.jpg?ga=GA1.1.656672588.1747633788&semt=ais_hybrid&w=740" class="carousel-image" alt="Travel 7">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80" class="carousel-image" alt="Travel 8">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" class="carousel-image" alt="Travel 9">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" class="carousel-image" alt="Travel 10">
+    </div>
+  </div>
+
+</body>
+</html>

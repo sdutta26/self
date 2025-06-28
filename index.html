@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travelia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- Leaflet CSS -->
+<link rel="stylesheet" href="style.css" />
+
+  <title>Explore The World And Enjoy Your Trip </title>
+  <style>
+
+
+    body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color:#f0f0f0; /* Light blue-gray shade */
+  margin: 0;
+  padding: 0;
+}
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fafbfc;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 60px 0 60px;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #222;
+      letter-spacing: 1px;
+    }
+    .logo span {
+      color: #2ec4b6;
+    }
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-size: 1.1rem;
+      margin-left: 36px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #2ec4b6;
+    }
+    .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 60px 0 60px;
+    }
+    .content {
+      max-width: 600px;
+      margin-right: 60px;
+      margin-top: 30px;
+    }
+    
+
+    .headline {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  animation: text-fade-up 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes text-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+.desc {
+  font-size: 1.13rem;
+  color: #555;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: desc-slide-up 1.6s ease-out forwards 0.6s;
+}
+
+/* Keyframes for movement */
+@keyframes desc-slide-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+    
+    
+
+    .hero-img {
+  position: relative;
+  width: 370px;
+  height: 260px;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+  border-radius: 0 60px 0 60px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  overflow: hidden;
+  animation: photo-slide-in 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes photo-slide-in {
+  from {
+    transform: translateY(60px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+    /* Optional: Brush effect using a mask image (SVG or PNG) */
+    .hero-img::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://www.transparenttextures.com/patterns/brush.png') repeat;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    /* Optional: Paper plane icon */
+    .plane {
+      position: absolute;
+      left: 340px;
+      top: 20px;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+      animation: fly 2.2s cubic-bezier(0.77, 0, 0.175, 1) 0.6s forwards;
+      opacity: 0;
+    }
+    @keyframes fly {
+      from {
+        transform: translate(-30px, 30px) scale(0.7) rotate(-10deg);
+        opacity: 0;
+      }
+      to {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+
+.hero {
+  position: relative;
+  width: 960px;
+  height: 80vh;
+  margin: 0 auto; /* ✅ Center horizontally */
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzopm-zNcHheqbx0Zx3jQNmYDtNsEcm9TQ9g&s") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  border-radius: 12px; /* Optional: for styling */
+  overflow: hidden;
+}
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent dark overlay */
+  z-index: 1;
+}
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  text-align: center;
+}
+
+
+.gallery-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+.gallery-item img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 8px;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+
+
+  </style>
+
+
+</head>
+<body>
+
+    <header>
+       
+        <div class="container">
+           
+            <div class="logo"><span>Travelia</span>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <li><a href="tour.html">Tour</a></li>
+                    
+                    <li><a href="ab.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+  
+  </div>
+  <div class="container">
+    <div class="content">
+    
+    <div class="headline">
+  <span class="line1">Explore The World</span><br>
+  <span class="line2">And Enjoy Your Trip</span>
+</div>
+
+      <div class="desc">
+        Discover breathtaking destinations and create unforgettable memories with Travelia. From scenic landscapes to vibrant cities, your next adventure awaits.<br>
+        Let's make your dream trip a reality!
+      </div>
+    </div>
+    <div style="position:relative;">
+      <!-- Optional: Paper plane SVG -->
+      <svg class="plane" viewBox="0 0 48 48" fill="none">
+        <path d="M4 24L44 4L34 44L22 26L4 24Z" stroke="#2ec4b6" stroke-width="2" fill="#fff"/>
+        <path d="M22 26L44 4" stroke="#2ec4b6" stroke-width="2"/>
+      </svg>
+      <div class="hero-img"></div>
+    </div>
+  </div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+        </div>
+        <h1>Leave Your Footprints</h1>
+    </section>
+
+    <!-- Gallery Section -->
+     <section class="gallery">
+  <h2>Popular Destinations</h2>
+  <div class="gallery-grid">
+
+    <a href="forest.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxLX2xD8U2fkjuB950HtzPkutyXNhx-G5KkA&s" alt="Rio De Janeiro">
+        <p><i class="fas fa-map-marker-alt"></i> Sundarban</p>
+      </div>
+    </a>
+
+    <a href="mountain.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7N9m0jdempDJvh-Z9HwsD46v5XHge7yxD9g&s" alt="kashmir">
+        <p><i class="fas fa-map-marker-alt"></i> Kashmir</p>
+      </div>
+    </a>
+
+    <a href="temple.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS221K5efC57YvXWt_lii4IIlPzTz5JzgwIw&s" alt="kedarnath">
+        <p><i class="fas fa-map-marker-alt"></i> Kedarnath Temple</p>
+      </div>
+    </a>
+
+    <a href="temple.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVibLgGBwCP1-AIQJIKsQoeSPtKRW6xNAJtg&s" alt="tirupati">
+        <p><i class="fas fa-map-marker-alt"></i> Somnath Temple</p>
+      </div>
+    </a>
+
+    <a href="mountain.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=400&q=80" alt="Rome">
+        <p><i class="fas fa-map-marker-alt"></i> Manali</p>
+      </div>
+    </a>
+
+    <a href="beach.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Maldives">
+        <p><i class="fas fa-map-marker-alt"></i> Goa</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+   
+
+   
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-item">
+                <p>generally praise the stunning natural beauty, particularly the mountains and valleys. Many reviewers highlight the experience of hiking, rafting, and enjoying the local cuisine. Some reviewers recommend Manali as a yearly trip due to its outstanding and memorable experience. </p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Kevin Wilson">
+                    <div>
+                        <strong>Denis</strong>
+                        <span>Trip to manali</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <p>Enjoyed everything in Goa . Pickup and drop facility was very good. Hotel rooms were clean and good under my package</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Ben Davis">
+                    <div>
+                        <strong>Ben</strong>
+                        <span>Trip to goa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <p>Tirupati trips are generally well-regarded, particularly for the spiritual experience at the Tirumala Temple. </p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/women/47.jpg" alt="Joana Jones">
+                    <div>
+                        <strong>Joana </strong>
+                        <span>Trip to Tirupati</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+ 
+ 
+
+
+
+</body>
+</html>

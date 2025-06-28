@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kedarnath Temple Travel Essentials</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #fafbfc;
+      min-height: 100%;
+    }
+
+  nav {
+  background-color: #f8f9fa; /* Light background */
+  padding: 12px 30px;
+  display: flex;
+  justify-content: center;  /* center nav links */
+  align-items: center;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent; /* no underline by default */
+  transition: border-color 0.3s ease;
+}
+
+nav a.active {
+  border-bottom: 2px solid #007bff; /* blue underline for active link */
+}
+
+
+
+
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      margin: 16px 0;
+      color: #222;
+    }
+
+    .info {
+      margin-bottom: 32px;
+      text-align: left;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .info p {
+      margin: 5px 0;
+    }
+
+    .attraction-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f2f2f2;
+      margin: 24px 0;
+      text-align: left;
+    }
+
+    .attraction-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .attraction-card .content {
+      padding: 16px;
+    }
+
+    .tourism-desc {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+      max-width: 100%;
+      margin: 0 auto 24px;
+      text-align: justify;
+    }
+
+    .readMoreLink {
+      color: #0077cc;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .moreText {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 20px;
+        border-radius: 0;
+        padding: 20px 10px;
+      }
+
+      .slideshow-container img {
+        height: 250px !important;
+      }
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto 40px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      user-select: none;
+      transform: translateY(-50%);
+      transition: background-color 0.3s;
+      z-index: 5;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+      left: 16px;
+    }
+
+    .next {
+      right: 16px;
+    }
+
+    .fade {
+      animation: fadeEffect 1s;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 16px;
+      border-radius: 4px;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .place-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+      padding-bottom: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .place-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .place-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      user-select: none;
+    }
+
+    .place-card p {
+      margin: 8px 0 0 0;
+      font-weight: 600;
+      color: #222;
+      text-transform: capitalize;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="tour.html" class="active">Tour</a>
+    <a href="temple.html" class="active">Back to Temple</a>
+
+  </nav>
+
+  <main class="container" role="main">
+    <h1>Kedarnath Temple</h1>
+
+    <!-- Slideshow -->
+    <section class="slideshow-container" aria-label="Temple images slideshow">
+      <div class="slide fade" aria-hidden="false">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc0zDu_uLofVCUwPttOwrk9SamgoqGkS1q-g&s" alt="Kedarnath Temple view 1" />
+        <div class="overlay-text">3Days/2 Nights</div>
+      </div>
+      <div class="slide fade" aria-hidden="true">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgqOd4YJfY74c6uzGX-P7tY8edM698Dfym2A&s" alt="Kedarnath Temple view 2" />
+        <div class="overlay-text">3 Days/2 Nights</div>
+      </div>
+      <div class="slide fade" aria-hidden="true">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Amq5Aqnf73Zm9KFKQycja24BIb95l8_TJg&s" alt="Kedarnath Temple view 3" />
+        <div class="overlay-text">3 Days/2 Nights</div>
+      </div>
+      
+       <div class="slide fade" aria-hidden="true">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVSLEMoUR-gkyvURf8Lbn6hR2y4GEPdq1PmQ&s" alt="Kedarnath Temple view 4" />
+        <div class="overlay-text">3 Days/2 Nights</div>
+      </div>
+       <div class="slide fade" aria-hidden="false">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnse0QYWigJTNv_HxUJWdagnFSgd7ofzK_Ug&s" alt="Kedarnath Temple view 5" />
+        <div class="overlay-text">3Days/2 Nights</div>
+      </div>
+       <div class="slide fade" aria-hidden="false">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG73XztEWH4mXqwg-BZqKfNA5lGy5LpMoO0w&s" alt="Kedarnath Temple view 6" />
+        <div class="overlay-text">3Days/2 Nights</div>
+      </div>
+      <button class="prev" aria-label="Previous slide" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" aria-label="Next slide" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+
+    <section class="info" aria-label="Temple information">
+      <h2>Somnath Jyotirlinga Temple</h2>
+      <div class="attraction-card">
+  <div class="attraction-header">
+    <h2>Top Attraction</h2>
+    <span class="tag">Temple</span>
+  </div>
+
+  <div class="attraction-info">
+    <p><strong>Weather:</strong> Pleasant</p>
+
+    <p><strong>Timings:</strong><br>
+      <ul>
+        <li>Darshan: 6:00 AM - 9:30 PM</li>
+        <li>Arati: 7:00 AM, 12:00 PM, 7:00 PM</li>
+        <li>Light & Sound Show: 7:45 PM</li>
+      </ul>
+    </p>
+
+    <p><strong>Time Required:</strong> 2–3 hrs</p>
+
+    <p><strong>Entry Fee:</strong><br>
+      Light & Sound Show: ₹25<br>
+      Half-ticket: ₹15
+    </p>
+
+    <p><strong>Also Referred As:</strong> Prabhas Teertha</p>
+  </div>
+</div>
+
+    </section>
+
+    <section class="tourism-desc" aria-label="Kedarnath tourism description">
+      <h2>Somnath Temple, Somnath Overview</h2>
+      <p>
+       The Somnath Jyotirlinga Temple is first of the twelve Jyotirlinga shrines of Lord Shiva. It is located on the western coast of Gujarat and is one of the oldest temples of the country.
+        <span class="dots">...</span>
+        <span class="moreText">
+         It has been mentioned in ancient texts like Shreemad Bhagavat Gita, Skandpuran, Shivpuran and Rig-Veda which signifies the importance of this temple as one of the most celebrated pilgrimage sites. The temple is located on the ancient Triveni Sangam or the confluence of three rivers - Kapila, Hiran, and Saraswati.
+
+The temple is known as an eternal shrine owing to its perseverance against the test of time. It has withstood several destructions in the past and still has not lost its beauty. It is said that the temple was looted and destroyed as many as seventeen times by emperors like Mahmud Ghazni, Alauddin Khilji, and Aurangzeb.
+
+Sardar Vallabhbhai Patel was the force behind the revival and reconstruction of the present-day temple in 1951 which still serves as a notable edifice of the original Somnath Temple. It attracts millions of devotees all throughout the year.
+        </span>
+      </p>
+      <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;" aria-expanded="false" aria-controls="moreText">Read More</a>
+    </section>
+
+    <section aria-label="Places to visit">
+      <h1>Places To Visit In</h1>
+      <div class="places-grid">
+        <div class="place-card" tabindex="0">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRPSEUpg3Gq-xY4AKjyf2liByyLJL0fjHc3A&s" alt="Umiam Lake"/>
+          <p>Somnath Beach</p>
+        </div>
+        <div class="place-card" tabindex="0">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuZtZ9CTjSxC6Ha8pLWJi9hS8yCPLzQFPENw&s"/>
+          <p> Prabhas Patan Museum</p>
+        </div>
+        <div class="place-card" tabindex="0">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn_anu8p-6skrT0XQ4Q3tWTESh2GJ_hDRJ5w&s"/>
+          <p>Bhidbhanjan Mahadev Temple</p>
+        </div>
+        <div class="place-card" tabindex="0">
+          <img src="https://www.holidify.com/images/compressed/7080.jpg"/>
+          <p>Suraj Mandir</p>
+        </div>
+        <div class="place-card" tabindex="0">
+          <img src="https://www.holidify.com/images/cmsuploads/compressed/somnath_chorwad_beach_003_20190429113846.jpg"/>
+          <p>Chorwad Beach</p>
+        </div><div class="place-card" tabindex="0">
+          <img src="https://www.holidify.com/images/cmsuploads/compressed/LaxminarayanTempleSomanth_20200311145802_20200311145828.jpg"/>
+          <p>Laxminarayan Temple</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript to toggle read more and slideshow -->
+  <script>
+    function toggleReadMore(link) {
+      const parent = link.closest(".tourism-desc");
+      const moreText = parent.querySelector(".moreText");
+      const dots = parent.querySelector(".dots");
+
+      if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "inline";
+        dots.style.display = "none";
+        link.textContent = "Read Less";
+        link.setAttribute('aria-expanded', 'true');
+      } else {
+        moreText.style.display = "none";
+        dots.style.display = "inline";
+        link.textContent = "Read More";
+        link.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlide(index) {
+      if (index >= slides.length) slideIndex = 0;
+      if (index < 0) slideIndex = slides.length - 1;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].setAttribute('aria-hidden', 'true');
+      }
+
+      slides[slideIndex].style.display = "block";
+      slides[slideIndex].setAttribute('aria-hidden', 'false');
+    }
+
+    function changeSlide(n) {
+      slideIndex += n;
+      showSlide(slideIndex);
+    }
+
+    // Initialize slideshow
+    showSlide(slideIndex);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Travel Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f6fc;
+      color: #333;
+    }
+
+    nav {
+      background-color: #007bff;
+      padding: 12px 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 25px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #cce5ff;
+    }
+
+    .section__container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section__header {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .section__description {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .journey__grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .journey__card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      width: 300px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .journey__card:hover {
+      transform: translateY(-5px);
+    }
+
+    .journey__card h4 {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .showcase__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .destination-card {
+      background-color: white;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .destination-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .destination-card h3 {
+      font-size: 22px;
+      margin-top: 15px;
+    }
+
+    .destination-card p {
+      font-size: 15px;
+      color: #666;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #e84118;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background-color: #ff5733;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #ff3b00;
+    }
+
+    @media (max-width: 768px) {
+      .destination-card {
+        width: 100%;
+      }
+
+      .showcase__container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+   
+      
+    <a href="tour.html">Tour</a>
+     
+     <a href="ab.html">About</a>
+    <a href="contact.html">contact</a>
+  </nav>
+</header>
+
+ 
+
+  <!-- About Us Section -->
+  <section class="section__container about__container" id="about">
+    <h2 class="section__header">About us</h2>
+    <p>We are a passionate travel company dedicated to making your dream vacations come true. From personalized itineraries to expert recommendations, we’re here to guide you on every step of your journey.</p>
+
+    <!-- Rating Section -->
+    <h3>Customer Ratings</h3>
+    <div class="rating__container">
+      <div class="rating__item">Pihu: 4.5</div>
+      <div class="rating__item">John: 5.0</div>
+      <div class="rating__item">Nick: 4.8</div>
+      <div class="rating__item">Lisa: 4.0</div>
+    </div>
+
+    <!-- Voting Section -->
+    <h3>Your Rating</h3>
+    <div class="voting__form">
+      <label for="rating">Rate our Service: </label>
+      <select id="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button onclick="submitRating()">Submit Rating</button>
+    </div>
+    <div class="user-vote" id="userVote"></div>
+
+    <!-- Comment Section -->
+    <div class="comment__section">
+      <h3>Leave a Comment</h3>
+      <div class="comment__form">
+        <textarea id="commentText" placeholder="Share your experience..."></textarea>
+        <button onclick="submitComment()">Submit Comment</button>
+      </div>
+      <div id="commentsContainer"></div>
+    </div>
+
+    <!-- User Experiences -->
+    <div class="user-experience">
+      <h3>Other Travelers' Experiences</h3>
+      <div class="experience-item">
+        <p><span class="user-name">Nikolas:</span> "It was an amazing tour and I am very happy with my trip!"</p>
+      </div>
+      <div class="experience-item">
+        <p><span class="user-name">Tola:</span> "I can’t explain how happy I am with this trip, and this place is so beautiful!"</p>
+      </div>
+      <div class="experience-item">
+        <p><span class="user-name">Raha:</span> "In this trip, I got to explore many places and it was a budget-friendly adventure!"</p>
+      </div>
+    </div>
+  </section>
+   <section class="about" id="about">
+      <div class="section__container about__container">
+        <div class="about__image">
+          <img src="https://img.freepik.com/premium-photo/famous-monuments-world-grouped-together-planet-earth_1302896-46.jpg?ga=GA1.1.656672588.1747633788&semt=ais_hybrid&w=740" alt="about" />
+        </div>
+        <div class="about__content">
+          <h2 class="section__header">
+            It's Time For a <span>New Adventure!</span> Don't Wait Any Longer.
+          </h2>
+          <p class="section__description">
+            At Travelia , we believe every journey is a story waiting to be told.
+            Whether you're seeking the tranquility of nature, the charm of
+            historic cities, or the excitement of new cultures, we're here to
+            turn your travel dreams into reality. So why wait? Pack your bags,
+            step out of your comfort zone, and letTravelia guide you to your
+            next great experience!
+          </p>
+        
+        </div>
+      </div>
+    </section>
+   
+  <meta charset="UTF-8">
+  <title>Testimonial with World Map</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .testimonial-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 60px 5vw;
+      background: #fff;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .testimonial-left {
+      max-width: 520px;
+      flex: 1;
+    }
+    .top-reviews {
+      color: #5bb5ae;
+      font-size: 1.2em;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .main-title {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 30px;
+      line-height: 1.2;
+    }
+    .quote {
+      color: #5bb5ae;
+      font-size: 2.5em;
+      vertical-align: middle;
+      font-family: serif;
+      margin-right: 10px;
+    }
+    .testimonial-text {
+      font-size: 1.12em;
+      color: #444;
+      margin-bottom: 20px;
+      display: inline;
+    }
+    .client-info {
+      margin-top: 20px;
+    }
+    .client-name {
+      font-weight: bold;
+      font-size: 1.07em;
+    }
+    .client-role {
+      color: #888;
+      font-size: 0.97em;
+      margin-bottom: 5px;
+    }
+    .stars {
+      color: #ffd700;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+    }
+    .testimonial-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 400px;
+    }
+    .map-container {
+      position: relative;
+      width: 420px;
+      height: 320px;
+      background: transparent;
+    }
+    .world-map {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 10px;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+    /* Avatar Styles */
+    .avatar {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      object-fit: cover;
+      background: #fff;
+    }
+    /* Example positions for avatars (adjust as needed) */
+    .avatar1 { top: 35px; left: 65px; }
+    .avatar2 { top: 45px; right: 65px; }
+    .avatar3 { top: 135px; left: 190px; }
+    .avatar4 { bottom: 40px; left: 90px; }
+    .avatar5 { bottom: 35px; right: 90px; }
+    /* Optional: Add a subtle pin effect below avatars */
+    .avatar::after {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #5bb5ae;
+      border-radius: 50%;
+      margin: 0 auto;
+      margin-top: 2px;
+      box-shadow: 0 0 4px #5bb5ae66;
+    }
+    @media (max-width: 900px) {
+      .testimonial-section { flex-direction: column; }
+      .testimonial-right { margin-top: 40px; }
+      .map-container { width: 320px; height: 220px; }
+    }
+  </style>
+  <div class="testimonial-section">
+    <div class="testimonial-left">
+      <div class="top-reviews">Top Reviews</div>
+      <div class="main-title">Our Valuable Clients<br>Say About Us</div>
+      <div>
+        <span class="quote">&#10077;</span>
+        <span class="testimonial-text">
+        Travelia made my dream vacation a reality! From the moment I started planning, their team provided excellent recommendations and tailored my itinerary to perfection. Every experience felt personalized, and I loved how seamless the entire journey was.
+        </span>
+      </div>
+      <div class="client-info">
+        <div class="client-name">Emily Roberts</div>
+        <div class="client-role">Travel Blogger</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      </div>
+    </div>
+    <div class="testimonial-right">
+      <div class="map-container">
+        <img src="https://img.freepik.com/free-vector/worldmap-background-design_1127-2318.jpg?semt=ais_hybrid&w=740" class="world-map" alt="World Map">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar avatar1" alt="Client 1">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar avatar2" alt="Client 2">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="avatar avatar3" alt="Client 3">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" class="avatar avatar4" alt="Client 4">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="avatar avatar5" alt="Client 5">
+      </div>
+    </div>
+  </div>
+
+
+ <script>
+  function submitRating() {
+    const rating = document.getElementById("rating").value;
+    const userVoteDiv = document.getElementById("userVote");
+
+    userVoteDiv.innerHTML = `<p>Thank you for rating us ${rating} star${rating > 1 ? 's' : ''}!</p>`;
+  }
+
+  function submitComment() {
+    const commentText = document.getElementById("commentText").value;
+    const commentsContainer = document.getElementById("commentsContainer");
+
+    if (commentText.trim() !== "") {
+      const newComment = document.createElement("div");
+      newComment.className = "experience-item";
+      newComment.innerHTML = `<p><span class="user-name">You:</span> "${commentText}"</p>`;
+
+      commentsContainer.appendChild(newComment);
+
+      // Optionally clear textarea after submission
+      document.getElementById("commentText").value = "";
+    } else {
+      alert("Please write a comment before submitting.");
+    }
+  }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore Sundarbans travel tips, weather, best time to visit, boat safaris, bird sanctuaries, and more."/>
+  <title>Sundarbans Travel Essentials</title>
+  <style>
+   * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fafbfc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+     .navbar {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      height: 48px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: #0077cc;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .navbar a.active {
+      font-weight: 600;
+      border-bottom: 2px solid #0077cc;
+      color: #222;
+    }
+
+
+    .container {
+      max-width: 1000px;
+      width:90%;
+      margin: 32px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      padding: 0 0 32px 0;
+    }
+    .section {
+      padding: 24px;
+    }
+    .essentials-box {
+      background: #eaf4fb;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .essentials-row {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .rating-badge {
+      display: inline-block;
+      background: #1bb76e;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 3px 10px;
+      font-size: 15px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .ratings-count {
+      color: #555;
+      font-size: 13px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    .rate-link, .readMoreLink {
+      color: #0077cc;
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: 6px;
+      cursor: pointer;
+    }
+    .essentials-label {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .home-title {
+      font-style: italic;
+      font-size: 1.1em;
+      color: #444;
+      margin-bottom: 10px;
+    }
+    .tourism-title {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #222;
+      margin: 0 0 8px 0;
+    }
+    .tourism-desc {
+      color: #333;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+    .hotels-btn {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      background: linear-gradient(90deg, #ff2e63 0%, #ff6a00 100%);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      border-radius: 25px;
+      padding: 14px 0;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(255,46,99,0.12);
+      margin-top: 18px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .hotels-btn:hover {
+      background: linear-gradient(90deg, #ff6a00 0%, #ff2e63 100%);
+    }
+    .attraction-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      border: 1px solid #f2f2f2;
+      margin-bottom: 18px;
+    }
+    .attraction-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      border-radius: 0;
+    }
+    .attraction-card .content {
+      padding: 16px;
+    }
+
+    /* New styles for horizontal scrolling */
+    .attractions-container {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 16px;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .attraction-card {
+      flex: 0 0 320px;
+      margin-bottom: 0;
+      scroll-snap-align: start;
+    }
+    .attractions-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .attractions-container::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 700px) {
+      .container { max-width: 100%; border-radius: 0; box-shadow: none; }
+      .section { padding: 18px 8px 10px 8px; }
+      .essentials-box { padding: 14px 8px; }
+      .hotels-btn { width: 98%; }
+      .attraction-card {
+        flex: 0 0 280px;
+      }
+    }
+
+    .image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="tour.html" class="active">Tour</a>
+    <a href="forest.html" class="active">Back to Forest</a>
+
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <h2>Sundarbans Travel Essentials</h2>
+      <div class="essentials-box">
+        <div class="essentials-row">
+          <span class="rating-badge">4.7 / 5</span>
+          <span class="ratings-count">(77 ratings)</span>
+        </div>
+        <div class="essentials-row"><span class="essentials-label">Weather:</span>28 - 30°C</div>
+        <div class="essentials-row"><span class="essentials-label">Ideal duration:</span>7 days</div>
+        <div class="essentials-row"><span class="essentials-label">Best Time:</span>September to March</div>
+      </div>
+        
+      <div class="home-title">"Home of the Bengal Tigers"</div>
+      <div class="tourism-title">Sundarbans Tourism</div>
+        <div class="image-wrapper">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfOcE4OQfURY9nN6CZ_mEhcSC7-aDIgmv3bA&s" alt="Mangrove Forest Boat Tour"/>
+         <div class="image-text">7 days / 6 nights</div>
+  </div>
+
+      <div class="tourism-desc">
+        One of the largest active deltas in the world, the Sundarbans, named after the Sundari mangrove trees, is shared by India and Bangladesh. It’s famous for its 40,000 sq. km mangrove forest, 260+ bird species, and the Royal Bengal tiger...
+        <a href="#" class="readMoreLink">Read More</a>
+        <p class="moreText" style="display: none;">
+          Sundarbans National Park is around 110 km south of Kolkata. It is a UNESCO World Heritage Site and a Biosphere Reserve, home to rare species like the Royal Bengal tiger, salt-water crocodile, and King Crabs. With over 64 types of mangroves and more than 400 tigers, the area is known for its rich biodiversity. Top spots include Hiron Point, Katka Viewpoint, and the mudflats of Chargheri Char for coastal trekking.
+        </p>
+        <a href="#" class="readLessLink" style="display: none;">Read Less</a>
+      </div>
+
+      <h2>Best Time to Visit:</h2>
+      <p><b>September to March</b> — ideal for pleasant weather. Avoid peak summer due to heat.</p>
+
+      <h2>Where to Stay:</h2>
+      <p><b>Gosaba</b> — the largest inhabited island offering unique tourist accommodations.</p>
+
+      <h2>Things to Do:</h2>
+      <p><b>Boat safaris, bird-watching at Sajnekhali Bird Sanctuary, visiting the Crocodile Project, and night safaris to see glowing phytoplankton.</b></p>
+    </div>
+
+    <!-- Attractions horizontally scrollable -->
+    <div class="attractions-container">
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">1. Boat Tour of the Mangrove Forest</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfOcE4OQfURY9nN6CZ_mEhcSC7-aDIgmv3bA&s" alt="Mangrove Forest Boat Tour"/>
+        <div class="content">
+          <div class="tourism-desc">
+            Boat tours are the best way to explore Sundarbans. Early morning rides through narrow creeks are ideal for spotting wildlife.
+            <a href="#" class="readMoreLink">Read More</a>
+            <p class="moreText" style="display:none;">Smaller groups are advised as large crowds can scare away animals.</p>
+            <a href="#" class="readLessLink" style="display: none;">Read Less</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">2. Jhinga Khali</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzLU4qC6o3xoXKi-6LsDnr13tUeACZ1PoM8Q&s"/>
+        <div class="content">
+          <div class="tourism-desc">
+            This island gained attention through Amitav Ghosh’s novel *The Hungry Tide*.
+            <a href="#" class="readMoreLink">Read More</a>
+            <p class="moreText" style="display:none;">Marichjhanpi is also linked with historical controversies and is being depicted in regional films.</p>
+             <a href="#" class="readLessLink" style="display: none;">Read Less</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">3. Sajnekhali Bird Sanctuary</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPlbt7J5Pdf4twjQDMEdk6fovESLw7idT53A&s"/>
+        <div class="content">
+          <div class="tourism-desc">
+            Ideal for bird-watchers. Home to kingfishers, storks, and sea eagles.
+            <a href="#" class="readMoreLink">Read More</a>
+            <p class="moreText" style="display:none;">You may also see the Paradise Flycatcher and the rare Asian Dowitcher here.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">4. River Boat Cruise</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg9bOLxK8hFomZJdoGSB8aF8nYfUPMpUHXBA&s"/>
+        <div class="content">
+          <div class="tourism-desc">
+            Relaxing boat cruises along wide rivers, perfect for spotting playful river dolphins.
+            <a href="#" class="readMoreLink">Read More</a>
+            <p class="moreText" style="display:none;">Dolphins are a delightful sight in their natural habitat during these river cruises.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.readMoreLink').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const moreText = this.nextElementSibling;
+        const readLess = moreText.nextElementSibling;
+        if (moreText && moreText.classList.contains('moreText')) {
+          moreText.style.display = 'block';
+          readLess.style.display = 'inline';
+          this.style.display = 'none';
+        }
+      });
+    });
+
+    document.querySelectorAll('.readLessLink').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const moreText = this.previousElementSibling;
+        const readMore = moreText.previousElementSibling;
+        if (moreText && moreText.classList.contains('moreText')) {
+          moreText.style.display = 'none';
+          readMore.style.display = 'inline';
+          this.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+
+</body>
+</html>

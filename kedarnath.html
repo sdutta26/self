@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kedarnath Temple Travel Essentials</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #fafbfc;
+      min-height: 100%;
+    }
+
+  nav {
+  background-color: #f8f9fa; /* Light background */
+  padding: 12px 30px;
+  display: flex;
+  justify-content: center;  /* center nav links */
+  align-items: center;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent; /* no underline by default */
+  transition: border-color 0.3s ease;
+}
+
+nav a.active {
+  border-bottom: 2px solid #007bff; /* blue underline for active link */
+}
+
+
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      margin: 16px 0;
+      color: #222;
+    }
+
+    .info {
+      margin-bottom: 32px;
+      text-align: left;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .info p {
+      margin: 5px 0;
+    }
+
+    .attraction-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f2f2f2;
+      margin: 24px 0;
+      text-align: left;
+    }
+
+    .attraction-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .attraction-card .content {
+      padding: 16px;
+    }
+
+    .tourism-desc {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+      max-width: 100%;
+      margin: 0 auto 24px;
+      text-align: justify;
+    }
+
+    .readMoreLink {
+      color: #0077cc;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .moreText {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 20px;
+        border-radius: 0;
+        padding: 20px 10px;
+      }
+
+      .slideshow-container img {
+        height: 250px !important;
+      }
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto 40px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      user-select: none;
+      transform: translateY(-50%);
+      transition: background-color 0.3s;
+      z-index: 5;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+      left: 16px;
+    }
+
+    .next {
+      right: 16px;
+    }
+
+    .fade {
+      animation: fadeEffect 1s;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 16px;
+      border-radius: 4px;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .place-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+      padding-bottom: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .place-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .place-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      user-select: none;
+    }
+
+    .place-card p {
+      margin: 8px 0 0 0;
+      font-weight: 600;
+      color: #222;
+      text-transform: capitalize;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="tour.html" class="active">Tour</a>
+    <a href="temple.html" class="active">Back to Temple</a>
+   
+  </nav>
+
+  <main class="container" role="main">
+    <h1>Kedarnath Temple</h1>
+
+    <!-- Slideshow -->
+    <section class="slideshow-container" aria-label="Temple images slideshow">
+      <div class="slide fade" aria-hidden="false">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJCNjvIzdcLu_K4JtCCVEdkfxdhybDwp4V6Q&s" alt="Kedarnath Temple view 1" />
+        <div class="overlay-text">3Days/2 Nights</div>
+      </div>
+      <div class="slide fade" aria-hidden="true">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEKPGvyUBIqdewpSKNfDfXpqKBr6Cki_o2ow&s" alt="Kedarnath Temple view 2" />
+        <div class="overlay-text">3 Days/2 Nights</div>
+      </div>
+      
+      <div class="slide fade" aria-hidden="true">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNbIFxY38lyp_Dbe4hVVknre2Vi7h7xVILyg&s" alt="Kedarnath Temple view 3" />
+        <div class="overlay-text">3 Days/2 Nights</div>
+      </div>
+      
+      
+      <div class="slide fade" aria-hidden="true">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6uBZ6BEGRfnqYgAM-kKdNxoySQB10IsjNyg&s" alt="Kedarnath Temple view 4" />
+        <div class="overlay-text">3 Days/2 Nights</div>
+      </div>
+
+      <button class="prev" aria-label="Previous slide" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" aria-label="Next slide" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+
+    <section class="info" aria-label="Temple information">
+      <h2>Shri Kedarnath Jyotirlinga Temple</h2>
+      <p><strong>Label:</strong> Top Attraction</p>
+      <p><strong>Tags:</strong> Temple</p>
+      <p><strong>Timings:</strong> 04:00 AM - 09:00 PM (Mid May - October)</p>
+      <p><strong>Time Required:</strong> 1 - 2 hours</p>
+      <p><strong>Entry Fee:</strong> Shuttle tickets - INR 1100. Various tour packages start from INR 50,000 per person onwards.</p>
+      <p><strong>Architecture:</strong> Dravidian Style</p>
+      <p><strong>Height:</strong> 160 feet</p>
+      <p><strong>Built:</strong> Structure built between 1623 and 1655</p>
+      <p><strong>Mobile Phones:</strong> Not allowed</p>
+      <p><strong>Also Referred As:</strong> Sri Meenakshi Temple</p>
+    </section>
+
+    <section class="tourism-desc" aria-label="Kedarnath tourism description">
+      <h2>Kedarnath Tourism</h2>
+      <p>
+        Kedarnath is one of the most sacred temples and the holiest Hindu pilgrimages in India. A part of Chhota Char Dham Yatra in Uttarakhand, Kedarnath is one of the most important among the 12 Jyotirlingas in India dedicated to Lord Shiva.
+        <span class="dots">...</span>
+        <span class="moreText">
+          Located on the Garhwal Himalayan Range in the Rudraprayag District, Kedarnath Temple can only be reached from Gaurikund through a trek and remains open only for six months from April to November, due to heavy snowfall in the region during the rest of the months.
+
+          During the winters from November to May, the deity is shifted from Kedarnath Temple to Ukhitmath and worshipped there. Kedar is another name of Lord Shiva, the protector and destroyer, and it's believed that a journey to Kedarnath provides one "Moksha" or salvation. Set amidst snow-clad mountains near Chorabari Glacier with the Mandakini River flowing in front, Kedarnath witnesses lakhs of devotees every year due to its religious significance.
+
+          The present Kedarnath Temple is believed to be reconstructed by Adi Shankaracharya, initially built by the Pandavas a thousand years ago from enormous stone slabs over a large rectangular dais. The disastrous flash floods of 2013 wreaked great havoc in the Kedarnath Valley; however, the temple itself did not suffer major damage.
+        </span>
+      </p>
+      <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;" aria-expanded="false" aria-controls="moreText">Read More</a>
+    </section>
+
+    <section aria-label="Places to visit">
+      <h1>Places To Visit In</h1>
+      <div class="places-grid">
+        <div class="place-card" tabindex="0">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYLAMPsTolKnz8DPR4psu7YyFIYdkYuThCxw&s" alt="Umiam Lake"/>
+          <p>Shri Bhairavanath Temple</p>
+        </div>
+        <div class="place-card" tabindex="0">
+          <img src="https://www.holidify.com/images/cmsuploads/square/1284_20190423141623.jpg"/>
+          <p>Shri kedarnath jyotirlinga temple</p>
+        </div>
+        <div class="place-card" tabindex="0">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvvr8sPHrzRaAoyvmtwBCUG6KSRq0AA30Ew&s"/>
+          <p>Sonprayag</p>
+        </div>
+        <div class="place-card" tabindex="0">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqtHqxsXEI7aG1b--Oowu05f71CTXEeBpHIA&s"/>
+          <p>Gaurikund</p>
+        </div>
+         <div class="place-card" tabindex="0">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2018/04/522.jpg"/>
+          <p> Rishikesh</p>
+        </div>
+         <div class="place-card" tabindex="0">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2019/11/800px-Kosi_River_valley_near_Almora_Uttarakhand_India-1.jpg"/>
+          <p>Almora</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript to toggle read more and slideshow -->
+  <script>
+    function toggleReadMore(link) {
+      const parent = link.closest(".tourism-desc");
+      const moreText = parent.querySelector(".moreText");
+      const dots = parent.querySelector(".dots");
+
+      if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "inline";
+        dots.style.display = "none";
+        link.textContent = "Read Less";
+        link.setAttribute('aria-expanded', 'true');
+      } else {
+        moreText.style.display = "none";
+        dots.style.display = "inline";
+        link.textContent = "Read More";
+        link.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlide(index) {
+      if (index >= slides.length) slideIndex = 0;
+      if (index < 0) slideIndex = slides.length - 1;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].setAttribute('aria-hidden', 'true');
+      }
+
+      slides[slideIndex].style.display = "block";
+      slides[slideIndex].setAttribute('aria-hidden', 'false');
+    }
+
+    function changeSlide(n) {
+      slideIndex += n;
+      showSlide(slideIndex);
+    }
+
+    // Initialize slideshow
+    showSlide(slideIndex);
+  </script>
+
+</body>
+</html>

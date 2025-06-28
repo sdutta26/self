@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kashmir Travel Essentials</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fafbfc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 360px;
+    }
+
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      height: 48px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: #0077cc;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .navbar a.active {
+      font-weight: 600;
+      border-bottom: 2px solid #0077cc;
+      color: #222;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+      margin: 40px auto;
+      background: #fff;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .section {
+      padding: 24px 0;
+    }
+
+    .essentials-box {
+      background: #eaf4fb;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .essentials-row {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .rating-badge {
+      display: inline-block;
+      background: #1bb76e;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 3px 10px;
+      font-size: 15px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .ratings-count {
+      color: #555;
+      font-size: 13px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      color: #222;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns = 2 rows for 6 items */
+      gap: 20px;
+      padding: 0 12px;
+      justify-items: center;
+    }
+
+    .place-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      width: 100%;
+    }
+
+
+    .place-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .attraction-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+    .place-card p {
+      padding: 10px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 16px 8px;
+      }
+
+      .section {
+        padding: 16px 8px;
+      }
+
+      .essentials-box {
+        padding: 14px 8px;
+      }
+
+      .places-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+      }
+    }
+
+    .image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="tour.html" class="active">Tour</a>
+    <a href="mountain.html" class="active">Back to mountain</a>
+
+  </div>
+
+ <div class="container">
+    <div class="section">
+      <h2> Darjeeling Travel Essentials</h2>
+      <div class="essentials-box">
+        <div class="essentials-row">
+          <span class="rating-badge">4.8 / 5</span>
+          <span class="ratings-count">(77 ratings)</span>
+        </div>
+        <div class="essentials-row"><strong>Weather:</strong> 13 - 22°C</div>
+        <div class="essentials-row"><strong>Ideal duration:</strong>9 days</div>
+        <div class="essentials-row"><strong>Best Time:</strong>  February to March, September to December</div>
+      </div>
+
+      <!-- Attractions horizontally scrollable -->
+    <div class="attractions-container">
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">"Queen of The Himalayas"
+Darjeeling Tourism</h3>
+<div class="image-wrapper">
+        <img src="https://www.holidify.com/images/bgImages/DARJEELING.jpg"/><div class="image-text">9 days / 8 nights</div>
+  </div>
+
+        <div class="content">
+          <div class="tourism-desc">
+            Darjeeling, the former summer capital of India under the British Raj, has evolved into one of India's most sought-after hill stations. 
+            
+            <span class="dots">...</span>
+        <span class="moreText" style="display: none;">
+          
+            This picturesque hill destination in West Bengal is ideal for a romantic honeymoon. Darjeeling, nestled among acres of tea estates, is 2,050 metres above sea level and thus has a cool climate all year long. Darjeeling is often clubbed with destinations in Sikkim its neighbouring state, making it a perfect starting point for exploring the wonders of the Eastern Himalayas.
+
+The Darjeeling Himalayan Railway established back in 1881 is conferred the title of World Heritage Status by UNESCO. The train begins its journey from the plains and rises to over 2000 metres above sea level, offering breathtaking views of the mountains as it chugs along. Darjeeling is also famous for it's tea plantations with over 86 tea estates responsible for producing the worldwide famous 'Darjeeling Tea'. 
+
+The third highest peak in the world and the highest in India, the Kanchenjunga peak, is visible from here, and you can enjoy a panoramic view of the peak. Some of Darjeeling's most popular attractions include monasteries, botanical gardens, a zoo, and the Darjeeling-Rangeet Valley Passenger Ropeway cable car, which is the longest Asian cable car. Tiger Hill is a fantastic spot to see the sunrise over the mountains in all its fiery glory.
+
+The best time to visit Darjeeling is between April to June when the weather is pleasant. However, a lot of people also prefer visiting the place during the winter months from October to December. The months of July to August received heavy rainfall, a lot of roadblocks are observed in the hill station and hence visiting Darjeeling during these months is not very advisable.
+
+</p>
+
+   </span>
+        <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <h1>Places To Visit In </h1>
+      <div class="places-grid">
+        <div class="place-card">
+          <img src="https://media.holidify.com/images/cmsuploads/square/1026IndiaDarjeeling19931231_20241228183441_20241228183520.jpg"/>
+          <p>Darjlling himalayan railway</p>
+        </div>
+        <div class="place-card">
+          <img src="https://media.holidify.com/images/cmsuploads/square/JapanesePeacePagodaDarjeelingWestBengal26_20241228210223_20241228210250.jpg"/>
+          <p>Darjlling himalayan railway</p>
+        </div>
+        <div class="place-card">
+          <img src="https://www.holidify.com/images/cmsuploads/square/attr_1489_20190302002827.jpg" alt="Houseboat Stay">
+          <p>Houseboat Stay</p>
+        </div>
+        <div class="place-card">
+          <img src="https://media.holidify.com/images/cmsuploads/square/HappyValleyTeaEstateDarjeeling8716424135_20241228213914_20241228213944.jpg"/>
+          <p>Happy valley tea estate</p>
+        </div>
+        <div class="place-card">
+          <img src="https://www.holidify.com/images/cmsuploads/square/2384_20190314133754.jpg"/>
+          <p>Batasia loop</p>
+        </div>
+        <div class="place-card">
+          <img src="https://media.holidify.com/images/cmsuploads/square/Darjeeling-tea-plantation-2_20250102160557_20250102160632.jpg"/>
+          <p>tea plantations Darjeeling</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- JavaScript to toggle read more -->
+<script>
+  function toggleReadMore(link) {
+    const parent = link.closest(".tourism-desc");
+    const moreText = parent.querySelector(".moreText");
+    const dots = parent.querySelector(".dots");
+
+    if (moreText.style.display === "none") {
+      moreText.style.display = "inline";
+      dots.style.display = "none";
+      link.textContent = "Read Less";
+    } else {
+      moreText.style.display = "none";
+      dots.style.display = "inline";
+      link.textContent = "Read More";
+    }
+  }
+</script>
+   
+</body>
+</html>

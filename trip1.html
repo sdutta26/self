@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Your Trip</title>
+
+  <!-- Remixicon & Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGHhbgBd6GOoaTouqmF4XCDxKl0zwODTMaVA&s") no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    nav {
+      background-color: #007bff;
+      padding: 12px 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 25px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #dff0ff;
+    }
+
+    .section__container {
+      padding: 50px 20px;
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .section__header {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .confirm-checkbox {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .confirm-checkbox input {
+      margin-right: 10px;
+    }
+
+    .btn {
+      background-color: #ff5733;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff3b00;
+    }
+
+    /* Toast Notification Style */
+   #notification {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  text-align: center;
+}
+
+
+    @media (max-width: 600px) {
+      .section__container {
+        margin: 20px;
+        padding: 30px 15px;
+      }
+
+      .section__header {
+        font-size: 26px;
+      }
+    }
+
+    /* Payment methods */
+    .payment-methods {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .payment-methods label {
+      cursor: pointer;
+      font-weight: 600;
+      color: #222;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      user-select: none;
+    }
+
+    .payment-methods input[type="radio"] {
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+   
+    <a href="tour.html">Tour</a>
+
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="mountain.html">Back</a>
+  </nav>
+
+  <!-- Booking Form Section -->
+  <section class="section__container">
+    <h2 class="section__header">Book Your Trip</h2>
+    <form action="submit.php" method="post">
+      <input type="hidden" name="destination" id="destination" />
+      <input type="hidden" name="price" id="price" />
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required />
+      </div>
+
+      <div class="form-group">
+        <label for="members">Number of Members</label>
+        <input type="number" id="members" name="members" min="1" value="1" required />
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="payment">Payment Amount</label>
+        <input type="number" id="payment" name="payment" readonly required />
+      </div>
+
+      <!-- Payment Methods -->
+      <div class="payment-methods form-group">
+        <label><input type="radio" name="paymentMethod" value="Credit Card" required> Credit Card</label>
+        <label><input type="radio" name="paymentMethod" value="UPI"> UPI</label>
+        <label><input type="radio" name="paymentMethod" value="PayPal"> PayPal</label>
+      </div>
+
+      <div class="confirm-checkbox">
+        <input type="checkbox" id="confirm" required />
+        <label for="confirm">I confirm that the above information is correct.</label>
+      </div>
+
+      <button type="submit" class="btn">Submit Booking</button>
+    </form>
+  </section>
+
+  <!-- Success Notification -->
+  <div id="notification">Booking submitted successfully!</div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const destination = urlParams.get('destination') || '';
+    const price = parseInt(urlParams.get('price')) || 0;
+
+    document.getElementById('destination').value = destination;
+    document.getElementById('price').value = price;
+
+    const paymentInput = document.getElementById('payment');
+    const membersInput = document.getElementById('members');
+
+    paymentInput.value = price;
+
+  
+  membersInput.addEventListener('change', () => {
+  const members = parseInt(membersInput.value);
+  if (members >= 1 && members <= 4) {
+    paymentInput.value = price * members;
+  } else {
+    paymentInput.value = price;
+  }
+});
+
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+
+      if (!document.getElementById('confirm').checked) {
+        alert("Please confirm that your information is correct before submitting.");
+        return false;
+      }
+
+      const notification = document.getElementById("notification");
+      notification.style.display = "block";
+
+      setTimeout(() => {
+        notification.style.display = "none";
+      }, 3000);
+
+      event.target.reset();
+      paymentInput.value = price;
+      membersInput.value = 1;
+
+      return false;
+    }
+  </script>
+
+</body>
+</html>

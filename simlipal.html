@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sundarbans Travel Essentials</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fafbfc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      height: 48px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: #0077cc;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .navbar a.active {
+      font-weight: 600;
+      border-bottom: 2px solid #0077cc;
+      color: #222;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      padding-bottom: 32px;
+    }
+
+    .section {
+      padding: 24px;
+    }
+
+    .essentials-box {
+      background: #eaf4fb;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .essentials-row {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .rating-badge {
+      display: inline-block;
+      background: #1bb76e;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 3px 10px;
+      font-size: 15px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .ratings-count {
+      color: #555;
+      font-size: 13px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .readMoreLink {
+      color: #0077cc;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .moreText {
+      display: none;
+      margin-top: 8px;
+    }
+
+    .tourism-title {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #222;
+      margin: 0 0 8px 0;
+    }
+
+    .tourism-desc {
+      color: #333;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    .attraction-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f2f2f2;
+      margin: 18px auto;
+      max-width: 100%;
+    }
+
+    .attraction-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .attraction-card .content {
+      padding: 16px;
+    }
+
+    h2, h3 {
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .container { max-width: 100%; border-radius: 0; box-shadow: none; }
+      .section { padding: 18px 8px 10px 8px; }
+      .essentials-box { padding: 14px 8px; }
+    }
+
+    .image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="tour.html" class="active">Tour</a>
+     <a href="forest.html" class="active">Back to Forest</a>
+
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <h2> simlipal Overview</h2>
+      <div class="essentials-box">
+        <h2>Orissa</h2>
+        <div class="essentials-row">
+          <span class="rating-badge">4.0 / 5</span>
+          <span class="ratings-count">(49 ratings)</span>
+        </div>
+       
+        <div class="essentials-row"><strong>Ideal duration:</strong>4-5 days</div>
+         <div class="essentials-row"><strong>Weather:</strong> 14°C-25⁰C</div>
+        <div class="essentials-row"><strong>Best Time:</strong>
+         (October – February)
+        </div>
+      </div>
+
+
+
+<!-- Inside your container > section -->
+<div class="attraction-card">
+  <h3>1.Similipal national park,Orissa  </h3>
+  <div class="image-wrapper">
+  <img src="low-quality.jpg"
+  srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQO0rhI-sFFBm6jVn6hhReRHCJCpRloZXXQ&s" alt=" Forest" />
+     <div class="image-text">6 days / 5 nights</div>
+  </div>
+
+  <div class="content">
+    <div class="tourism-desc">
+      Apart from the tiger, the major mammals are leopard, sambar, barking deer, gaur, jungle cat, wild boar, four-horned antelope, giant squirrel and common langur. Grey hornbill, Indian pied hornbill and Malabar pied hornbill are also found here. The park also has a sizeable population of reptiles, which includes the longest venomous snake, the King cobra and the Tricarinate hill turtle. The Mugger Management Programme at Ramatirtha has helped the mugger crocodile to flourish on the banks of the Khairi and Deo Rivers. 
+
+      <span class="dots">...</span>
+        <span class="moreText" style="display: none;">
+
+       History and current status:
+The Tiger Reserve originated as a hunting ground for the surrounding royalty. It was formally designated a tiger reserve under Project Tiger in May 1973. The Government of Orissa declared Similipal as a wildlife sanctuary in 1979 with an area of 2750 sq. km. Later in 1980, Government of Orissa proposed 303 sq. km of the sanctuary as National Park. Further in 1986, the area of the National Park was increased to 845.70 sq. km. The Government of India declared it as a biosphere reserve in 1994. UNESCO added this National Park to its list of Biosphere Reserves in May 2009. This tiger reserve also comes under Mayurbhanj Elephant Reserve that includes the adjacent Hadgarh and Kuldiha Wildlife Sanctuaries.
+
+Apart from its biodiversity, the region around Similipal forests is home to a variety of tribes. Prominent among these are Kolha, Santhala, Bhumija, Bhatudi, Gondas, Khadia, Mankadia and Sahara. Most of them are settled agriculturists, supplementing their income by collecting firewood and timber except for the last three who are indigenous hunter-gatherer communities living primarily off the forest, collecting forest produce. While the tribes earlier followed a number of traditional conservation practices like closed seasons, hunting taboos on specific species, maintenance of sacred groves (Jharia) etc., of late, these practices have been on the decline due to the increasing influence of modern civilization, increasing human population and decreasing wildlife availability.
+</p>
+</span>
+        <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Inside your container > section -->
+<div class="attraction-card">
+  <h3>2.Lulung Aranya </h3>
+  <img  src="low-quality.jpg"
+  srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK9tppaXRtMnvswH3MDh3rlJ94NURFH3QFUw&s" alt=" Forest" />
+  <div class="content">
+    <div class="tourism-desc">
+     Ensconced in the north-eastern part of Odisha, Simlipal is a national park covering 2750 km2. It was declared a tiger reserve in 1973 under “project tiger” and is now home to about 26 tigers. The forests of Simlipal is also a Biosphere Reserve, home to a plethora of wildlife that is rarely sighted. Swathes of lush green expanse, dewy mountains, the chirping of the birds, the trickling brooks, and the experience of a new world cut off to the outside one makes Simlipal a surreal and an enthralling getaway from the city life.
+
+      <a class="readMoreLink">Read More</a>
+      <p class="moreText" style="display: none;">
+      Lulung Aranya Nivas is a forest resort in the Mayurbhanj district, located close to Simlipal National Park. Set in the backdrop of thickets of tall trees, a number of waterfalls, and the gurgling Palpala river, this rustic resort in Baripada serves as a digital detox where you can remove yourselves from the clutches of mundane everyday life and revive your contact with nature. Burrowed in this bewitching backdrop, Lulung Aranya Nivas is one of the finest resorts in Simlipal, hosting national and international guests since 1999. It serves as an exotic escapade for guests to explore Simlipal's natural beauty.
+    </p>
+    <a href="#" class="readLessLink" style="display: none;">Read Less</a>
+    </div>
+  </div>
+</div>
+
+        
+<script>
+    document.querySelectorAll('.readMoreLink').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const moreText = this.nextElementSibling;
+        const readLess = moreText.nextElementSibling;
+        if (moreText && moreText.classList.contains('moreText')) {
+          moreText.style.display = 'block';
+          readLess.style.display = 'inline';
+          this.style.display = 'none';
+        }
+      });
+    });
+
+    document.querySelectorAll('.readLessLink').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const moreText = this.previousElementSibling;
+        const readMore = moreText.previousElementSibling;
+        if (moreText && moreText.classList.contains('moreText')) {
+          moreText.style.display = 'none';
+          readMore.style.display = 'inline';
+          this.style.display = 'none';
+        }
+      });
+    });
+
+
+
+  function toggleReadMore(link) {
+    const parent = link.closest(".tourism-desc");
+    const moreText = parent.querySelector(".moreText");
+    const dots = parent.querySelector(".dots");
+
+    if (moreText.style.display === "none") {
+      moreText.style.display = "inline";
+      dots.style.display = "none";
+      link.textContent = "Read Less";
+    } else {
+      moreText.style.display = "none";
+      dots.style.display = "inline";
+      link.textContent = "Read More";
+    }
+  }
+</script>
+  
+
+    
+</body>
+</html>

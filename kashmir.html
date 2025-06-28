@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kashmir Travel Essentials</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fafbfc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 360px;
+    }
+
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      height: 48px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: #0077cc;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .navbar a.active {
+      font-weight: 600;
+      border-bottom: 2px solid #0077cc;
+      color: #222;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+      margin: 40px auto;
+      background: #fff;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .section {
+      padding: 24px 0;
+    }
+
+    .essentials-box {
+      background: #eaf4fb;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .essentials-row {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .rating-badge {
+      display: inline-block;
+      background: #1bb76e;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 3px 10px;
+      font-size: 15px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .ratings-count {
+      color: #555;
+      font-size: 13px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      color: #222;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns = 2 rows for 6 items */
+      gap: 20px;
+      padding: 0 12px;
+      justify-items: center;
+    }
+
+    .place-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      width: 100%;
+    }
+
+
+    .place-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .attraction-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+    .place-card p {
+      padding: 10px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 16px 8px;
+      }
+
+      .section {
+        padding: 16px 8px;
+      }
+
+      .essentials-box {
+        padding: 14px 8px;
+      }
+
+      .places-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+      }
+    }
+
+    .image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="tour.html" class="active">Tour</a>
+    <a href="mountain.html" class="active">Back to mountain</a>
+
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <h2>Kashmir Travel Essentials</h2>
+      <div class="essentials-box">
+        <div class="essentials-row">
+          <span class="rating-badge">4.6 / 5</span>
+          <span class="ratings-count">(77 ratings)</span>
+        </div>
+        <div class="essentials-row"><strong>Weather:</strong> 15 - 33°C</div>
+        <div class="essentials-row"><strong>Ideal duration:</strong> 7 days</div>
+        <div class="essentials-row"><strong>Best Time:</strong> September - November; March - May</div>
+      </div>
+
+
+        <!-- Attractions horizontally scrollable -->
+    <div class="attractions-container">
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">1. Srinagar</h3>
+        <div class="image-wrapper">
+
+        <img src="https://img.freepik.com/free-photo/breathtaking-view-river-green-trees-snow-capped-mountain-cloudy-sky_181624-45727.jpg?semt=ais_hybrid&w=740"/><div class="image-text">8 days / 7 nights</div>
+  </div>
+        <div class="content">
+          <div class="tourism-desc">
+           Famously known as 'Heaven on Earth, Srinagar is located in the union territory of Jammu & Kashmir, on the banks of river Jhelum. 
+           
+
+            <span class="dots">...</span>
+        <span class="moreText" style="display: none;">
+          Known for its serene lakes, lush gardens, and Mughal-era architecture, Srinagar is a timeless destination that beckons travelers from around the world. Srinagar is known for the stationary houseboats and gondola-type rowboats- Shikaras on Dal Lake. Adorned with tranquil Dal Lake & Nigeen Lake, Srinagar is the dream destination for honeymoon and family holidays. 
+
+The tourists use Shikaras to see attractions like the Floating Vegetable Market and the Mir Bahris – a lively community of people who live on the lake itself. In addition, there are a lot of houseboats that provide a beautiful and unique stay experience on the lake. Srinagar is home to some of India's most exquisite Mughal-age gardens, with the top attractions being Nishat Bagh, Shalimar Bagh and Chashm-E-Shahi Garden. It is also home to Asia's largest tulip garden.
+
+Srinagar holds immense importance in the history and culture of India. It has been a center of trade and culture since ancient times, influenced by various dynasties including the Mughals and the Sikhs. The city's religious landmarks, such as the historic Shankaracharya Temple and the revered Hazratbal Shrine, attract pilgrims and spiritual seekers alike.
+
+Kashmiri cuisine or Wazwan is famous all over the globe. So when in Srinagar, trying out the signature dishes like Rogan Josh, Yakhni, and the aromatic Kahwa tea, which are rich in unique fragrant spices, is a must. The city's handicrafts, particularly its intricate Kashmiri carpets, Pashmina shawls, and traditional papier-mâché items, are renowned worldwide for their craftsmanship and artistic finesse from the Lal Chowk Market.
+
+Heavy snowfall affects the connectivity of Srinagar during the winter months of December to February hence the best time to visit Srinagar is during the summer months from April to June. The city's hospitality industry is well-developed, offering a range of accommodations from luxurious houseboats to cozy guesthouses, ensuring a comfortable stay for every traveler. Communal tensions also lead to frequent curfews in some parts of the city; however, things have improved in the past few years. So, make sure to check the situation before visiting.
+
+</p>
+  </span>
+        <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+
+        <!-- Attractions horizontally scrollable -->
+    <div class="attractions-container">
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">2.Gulmarg </h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD1dKyAVUEjrHp7MzSy-wEWySljBjJ8Ds9wQ&s" />
+        <div class="content">
+          <div class="tourism-desc">
+          Situated at an altitude of 2730 m above sea level, Gulmarg is a popular skiing destination located in Pir Panjal Range of Union territory of Jammu and Kashmir. 
+            <span class="dots">...</span>
+        <span class="moreText" style="display: none;">
+           Surrounded by snow-covered lofty Himalayas, meadows of flowers, deep ravines, evergreen forested valleys, Gulmarg also has the world's second-highest Gondola ride.
+
+Gulmarg is one of the top honeymoon destinations in India. Gulmarg has also been developed as an adventure hub as the Indian Institute of Skiing, and Mountaineering is located here. A lot of courses on trekking, mountaineering, skiing, and snowboarding are offered by IISM. There are a lot of other private tour operators in Gulmarg as well, which provide similar courses and facilities for skiing and snowboarding. Known for its scenic beauty, Gulmarg has also been a popular destination for shooting various Bollywood films.
+
+</p>
+</span>
+        <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+<div class="essentials-row">
+          <span class="rating-badge">4.6 / 5</span>
+          <span class="ratings-count">(77 ratings)</span>
+        </div>
+        <div class="essentials-row"><strong>Weather:</strong> 14 - 26°C</div>
+        <div class="essentials-row"><strong>Ideal duration:</strong> 4–7 days</div>
+        <div class="essentials-row"><strong>Best Time:</strong> October to June </div>
+      </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- Attractions horizontally scrollable -->
+    <div class="attractions-container">
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">3.Sonamarg  </h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW-zNC3W8h_w5q-kDf6tyPj9ag2NA3hlNspA&s"/>
+        <div class="content">
+          <div class="tourism-desc">
+          Sonamarg, nestled in the enchanting landscapes of Jammu and Kashmir, emerges as a picturesque hill station located 80 kilometers northeast of Srinagar.
+           <span class="dots">...</span>
+        <span class="moreText" style="display: none;">
+          Resting at an elevation of approximately 2,730 meters above sea level, Sonamarg is a haven for travelers seeking the embrace of snow-laden fields, majestic glaciers, and serene lakes that cast a subtle spell on all who visit.
+
+The allure of Sonamarg is heightened by the surrounding great Himalayan glaciers, including the Kolhoi Glacier and Machoi Glacier, giving rise to the famous Three Sisters of the Kashmir Valley. Overlooking this charming hill town are towering peaks like Kolhoi Peak, Amarnath Peak, Machoi Peak, and Sirbal Peak, making Sonamarg a sought-after destination for adventure sports enthusiasts.
+
+Sonamarg serves as the gateway to the Kashmir Great Lakes Trek, a trekking paradise that unveils breathtaking mountain lakes such as Gangabal, Vishansar, Gadsar, Satsar, and Krishnasar. The Valley is gracefully divided by the Thajiwas range, known for its fir-covered Thajiwas spur, an ideal camping site offering stunning views. On the other side, visitors can marvel at cascading waterfalls and the Thajiwas Glacier, a prime attraction of this captivating destination.
+
+During winters, Sonamarg transforms into a snow-covered wonderland, creating a serene ambiance. However, accessibility becomes a challenge as the NH1D connecting it to nearby places shuts down due to heavy snowfall and avalanches. During this time, it becomes mandatory to hire union taxis, also known as chain taxis, available at Tangmarg. Additionally, ponies can be hired in Sonamarg for winter travel, allowing visitors to explore and sightsee in this winter wonder.
+
+Sonamarg's unique charm lies not only in its natural beauty but also in its role as the base camp for various trekking routes. Adventurous souls can embark on journeys leading to the pristine mountain lakes surrounded by the mesmerizing Himalayan landscape. Notable trekking destinations include the Nichinai Pass, Thajiwas Glacier Trek, Baltal Valley, Satsaran Pass, and the challenging Zoji La Pass.
+
+Whether enveloped in the tranquility of winter or adorned with the vibrant hues of summer, Sonamarg promises an unforgettable experience for those seeking the mesmerizing beauty of the Himalayas and the thrill of high-altitude adventure.
+
+
+</p>
+
+</span>
+        <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+<div class="essentials-row">
+          <span class="rating-badge">4.6 / 5</span>
+          <span class="ratings-count">(77 ratings)</span>
+        </div>
+        <div class="essentials-row"><strong>Weather:</strong> 4 - 13°C</div>
+        <div class="essentials-row"><strong>Ideal duration:</strong> 4–7 days</div>
+        <div class="essentials-row"><strong>Best Time:</strong> May to October  </div>
+      </div>
+          </div>
+        </div>
+      </div>
+
+
+        <!-- Attractions horizontally scrollable -->
+    <div class="attractions-container">
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">4.Pahalgam </h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZE5CQ1at4V4yNGNZa79bZuwEdtO320eC6XQ&s"/>
+        <div class="content">
+          <div class="tourism-desc">
+        Situated in the Anantnag district, about 90km away from Srinagar, Pahalgam is a beautiful hill station and a popular tourist attraction of Jammu & Kashmir.ahalgam is located on the banks of the Liddar River, and the rugged terrains, green meadows, and snow-capped mountains make it a perfect spot for adventure enthusiasts. 
+
+           <span class="dots">...</span>
+        <span class="moreText" style="display: none;">
+
+       Kolahoi Glaciers trek via a beautiful village named Aru is one of the popular trekking regions.
+
+       Sheshnag Lake, situated near Pahalgam, is another bliss altogether. In addition, the long stretches of rivers in Pahalgam are the perfect site for people who enjoy trout fishing. Baisaran, also called the mini switzerland, is a beautiful destination 6 kms away from Pahalgam. With tranquil meadows, pristine lakes and picturesque settings, you can just stroll down the area or sit down to have a picnic. Baisaran also offers activities like pony rides, zorbing, etc. 
+
+       Pahalgam is where the famous Bollywood movie Betaab, starring Sunny Deol and Amrita Singh, was shot. The valley was consequently named Betaab Valley after that. 
+       When in Pahalgam, remember to buy authentic Kashmiri saffron from Pampore. Chandanwari, situated in Pahalgam, serves as the base camp of one of the most important pilgrimages in India - the Amarnath Yatra. You could also go sledging on frozen glaciers.
+      </p>
+       </span>
+        <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+       
+<div class="essentials-row">
+          <span class="rating-badge">4.6 / 5</span>
+          <span class="ratings-count">(77 ratings)</span>
+        </div>
+        <div class="essentials-row"><strong>Weather:</strong> 4 - 13°C</div>
+        <div class="essentials-row"><strong>Ideal duration:</strong> 4–7 days</div>
+        <div class="essentials-row"><strong>Best Time:</strong> May to October  </div>
+      </div>
+          </div>
+        </div>
+      </div>
+
+      <h1>Places To Visit In Kashmir</h1>
+      <div class="places-grid">
+        <div class="place-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSROCLqgmWhtsfORv9Awbr1oPTxkVNi4vNnng&s" alt="Dal Lake">
+          <p>Dal Lake</p>
+        </div>
+        <div class="place-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShQ-4aCGfilVt4dm6tFtdW_Z_5mRYGylafUQ&s" alt="Gulmarg Gondola">
+          <p>Gulmarg Gondola</p>
+        </div>
+        <div class="place-card">
+          <img src="https://www.holidify.com/images/cmsuploads/square/attr_1489_20190302002827.jpg" alt="Houseboat Stay">
+          <p>Houseboat Stay</p>
+        </div>
+        <div class="place-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIt_cFJk2g4s_5YmZ_8rE7qQkYzrDeSyaEbA&s" alt="Shankaracharya Temple">
+          <p>Shankaracharya Temple</p>
+        </div>
+        <div class="place-card">
+          <img src="https://www.holidify.com/images/cmsuploads/square/5009_20210608175128.JPG" alt="Shikara Ride">
+          <p>Shikara Ride</p>
+        </div>
+        <div class="place-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyZUk_E-fugPguhi_xEi_ZH7WWiRY6QcAPvg&s" alt="Betaab Valley">
+          <p>Betaab Valley</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- JavaScript to toggle read more -->
+<script>
+  function toggleReadMore(link) {
+    const parent = link.closest(".tourism-desc");
+    const moreText = parent.querySelector(".moreText");
+    const dots = parent.querySelector(".dots");
+
+    if (moreText.style.display === "none") {
+      moreText.style.display = "inline";
+      dots.style.display = "none";
+      link.textContent = "Read Less";
+    } else {
+      moreText.style.display = "none";
+      dots.style.display = "inline";
+      link.textContent = "Read More";
+    }
+  }
+</script>
+
+
+</body>
+</html>

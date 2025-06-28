@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kashmir Travel Essentials</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fafbfc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 360px;
+    }
+
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      height: 48px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: #0077cc;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .navbar a.active {
+      font-weight: 600;
+      border-bottom: 2px solid #0077cc;
+      color: #222;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+      margin: 40px auto;
+      background: #fff;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .section {
+      padding: 24px 0;
+    }
+
+    .essentials-box {
+      background: #eaf4fb;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .essentials-row {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .rating-badge {
+      display: inline-block;
+      background: #1bb76e;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 3px 10px;
+      font-size: 15px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .ratings-count {
+      color: #555;
+      font-size: 13px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      color: #222;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns = 2 rows for 6 items */
+      gap: 20px;
+      padding: 0 12px;
+      justify-items: center;
+    }
+
+    .place-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      width: 100%;
+    }
+
+
+    .place-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .attraction-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+    .place-card p {
+      padding: 10px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 16px 8px;
+      }
+
+      .section {
+        padding: 16px 8px;
+      }
+
+      .essentials-box {
+        padding: 14px 8px;
+      }
+
+      .places-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+      }
+    }
+
+    .image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="tour.html" class="active">Tour</a>
+    <a href="mountain.html" class="active">Back to mountain</a>
+
+  </div>
+
+ <div class="container">
+    <div class="section">
+      <h2>
+Leh Tourism</h2>
+      <div class="essentials-box">
+        <div class="essentials-row">
+          <span class="rating-badge">4.2/ 5</span>
+          <span class="ratings-count">(77 ratings)</span>
+        </div>
+        <div class="essentials-row"><strong>Weather:</strong>4 - 12°C</div>
+        <div class="essentials-row"><strong>Ideal duration:</strong> 9 days</div>
+        <div class="essentials-row"><strong>Best Time:</strong>   April to July  </div>
+      </div>
+
+      <!-- Attractions horizontally scrollable -->
+    <div class="attractions-container">
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">"Little Tibet & the Land of Lamas "
+Leh Tourism</h3>
+ <div class="image-wrapper">
+        <img src="https://www.holidify.com/images/bgImages/LEH.jpg"/>
+         <div class="image-text">8-9 days / 8-7 nights</div>
+       </div>
+        <div class="content">
+          <div class="tourism-desc">
+           Popularly known as a biker's paradise, Leh is one of the two capitals of Ladakh that has numerous passes linking various locations in the challenging terrain. 
+ <span class="dots">...</span>
+        <span class="moreText" style="display: none;">
+
+
+ The city is nestled in a valley at an elevation of around 3,520 m in the upper Indus River, enveloped by the colossal peaks of the Ladakh Range. Regardless of its harsh weather and difficult accessibility, Leh was once an essential stopover for vital trade routes that connected Tibet to the East, Kashmir to the West and India to China. Today, Leh is the best Himalayan town to find untouched natural beauty.
+
+Most of the towns around Leh are said to have been founded by Nyima Gon. Many historical events led to the formation of today’s Leh, and the city captures its past through various exquisitely built monuments, palaces, mosques, monasteries, etc. Leh is famous for its high altitudes and has so much to offer, not only to young solo travelers & bikers but also to families and couples.
+
+
+</p>
+</span>
+        <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <h1>Places To Visit In </h1>
+      <div class="places-grid">
+        <div class="place-card">
+          <img src="https://www.holidify.com/images/cmsuploads/square/Shanti_Stupa,_Leh,_Ladakh_20180305180249.jpg"/>
+          <p>Shanti Stup</p>
+        </div>
+        <div class="place-card">
+          <img src="https://www.holidify.com/images/cmsuploads/square/attr_1512_20190305141801.jpg"/>
+          <p>Leh palace</p>
+        </div>
+        <div class="place-card">
+          <img src="https://www.holidify.com/images/cmsuploads/square/4647_20190306175116.jpg"/>
+          <p>Hall of Frame ladakh</p>
+        </div>
+        <div class="place-card">
+          <img src="https://www.holidify.com/images/cmsuploads/square/1024px-Stok_Palace_20190415145645.jpg"/>
+          <p>stok palace</p>
+        </div>
+        <div class="place-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStdKrvg4ypYOJeEwhkFq8X5fBxhzQV_EeWFQ&s"/>
+          <p>lamayuru monastery </p>
+        </div>
+        <div class="place-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjFbEFM4jThiYSV_2NfS5p5JKA0yRBFhgpNw&s"/>
+          <p>pangong lake</p>
+        </div>
+        <div class="place-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZmne-u8BHU_M2VbjPR8g-TKmXLwveXbIhKg&s"/>
+          <p>Ladakh Monastery, Ladakh Buddhist</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to toggle read more -->
+<script>
+  function toggleReadMore(link) {
+    const parent = link.closest(".tourism-desc");
+    const moreText = parent.querySelector(".moreText");
+    const dots = parent.querySelector(".dots");
+
+    if (moreText.style.display === "none") {
+      moreText.style.display = "inline";
+      dots.style.display = "none";
+      link.textContent = "Read Less";
+    } else {
+      moreText.style.display = "none";
+      dots.style.display = "inline";
+      link.textContent = "Read More";
+    }
+  }
+</script>
+</body>
+</html>

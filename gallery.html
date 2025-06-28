@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tour Gallery</title>
+  
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f6fc;
+      color: #333;
+    }
+
+    nav {
+      background-color: #007bff;
+      padding: 12px 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 25px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #cce5ff;
+    }
+
+
+    header {
+      background: url('images/gallery-banner.jpg') center/cover no-repeat;
+      padding: 4rem 2rem;
+      text-align: center;
+      color: #fff;
+      background-blend-mode: darken;
+      background-color: rgba(0,0,0,0.5);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    header p {
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+    footer {
+      background-color: #eee;
+      padding: 2rem;
+      text-align: center;
+      font-size: 1rem;
+    }
+    footer a {
+      text-decoration: none;
+      color: #0077cc;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+ <!-- ✅ Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+   
+    <a href="tour.html">Tour</a>
+  
+    <a href="ab.html">About </a>
+    <a href="contact.html">contact</a>
+  </nav>
+
+  
+  <header>
+    <h1>Tour Gallery</h1>
+    <p>Explore breathtaking moments captured during our tours.</p>
+  </header>
+
+  <section class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk3y7HfQL73cQ0a1TOUelenS_uolwyR3E95g&s" alt="Mountain Tour" />
+      <div class="gallery-caption">Mountain </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGAQooFNDLo9NeUzpqVbt8kxQN4XxaURq9MQ&s" alt="Beach Sunset" />
+      <div class="gallery-caption">Beach Sunset</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDO1HlzuguWfLl67VRd4p0fBXYpmfNGzskHg&s" alt="Forest Hike" />
+      <div class="gallery-caption">Forest Hike</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://img.freepik.com/free-photo/thi-lo-su-tee-lor-su-tak-province-thi-lo-su-waterfall-largest-waterfall-thailand_335224-753.jpg?semt=ais_hybrid&w=740" alt="Waterfall" />
+      <div class="gallery-caption">Waterfall</div>
+    </div>
+     <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgPokMrX8oBCpp2w3v1I1SRkbdhFUJuhHHAg&s" alt="durga puja"/>
+      <div class="gallery-caption">Durga puja</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv5haIQF31CU5upwxn3TDByczU13UZD6PnNg&s" alt="Cultural Festival" />
+      <div class="gallery-caption">Cultural Festival</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://img.freepik.com/free-photo/beautiful-street-market-sunset_23-2151530025.jpg?ga=GA1.1.656672588.1747633788&semt=ais_hybrid&w=740" alt="Local Market" />
+      <div class="gallery-caption">Local Market</div>
+    </div>
+
+      <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaTbkLHWo-OOSCbKfHIY0vwue29-lWyUl7Zg&s" />
+      <div class="gallery-caption">Temple</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEleHuoCMmol9RZG9QqRgf6BWQLx2yy_GpiQ&s"alt="Bungee jumping"/>
+      <div class="gallery-caption">Bungee jumping</div>
+    </div>
+
+   <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgyGbLrKnLUA0HMVBSggyN1EehmumERoD_aw&s" alt="River rafting"/>
+      <div class="gallery-caption">River rafting</div>
+    </div>
+      <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLh_7rWzT6Jh5iWXL5dYF-EllySe4geHcxIA&s" alt="scuba diving"/>
+      <div class="gallery-caption">scuba diving</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsTtaVfGT_PZ31yb-Fvo1Kr1_utJkvdWiCLA&s" alt="banana ride"/>
+      <div class="gallery-caption">Banana ride</div>
+    </div>
+
+      <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKSb03F5X1_mIn1jIx39q-RbB0FR2STv2OZA&s" alt="zipline munnar"/>
+      <div class="gallery-caption">zipline in munnar</div>
+    </div>
+<div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbBHT2yLNbSLxYwTcX6aiS17J1FWs1bOZIhA&s" alt="paragliding in manali"/>
+      <div class="gallery-caption">Paragliding in manali</div>
+    </div>
+
+<div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT70SVvuIhV1F6FlX4097O5D8tr7xSt2dZ5qQ&s" alt="hot air balloon"/>
+      <div class="gallery-caption">Hot air balloon</div>
+    </div>
+<div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd0PoxrKJ9WAnUt6XEJPssywnh29ZsSTMaRw&s" alt="speed boat ride goa"/>
+      <div class="gallery-caption">Speed boat ride goa</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_luXnYeY9nEBvQaIk9luwpS8Ke9fuiWygcg&s" alt="parasailing in goa"/>
+      <div class="gallery-caption">Parasailing in goa</div>
+    </div>
+
+
+      
+  </section>
+
+  
+ 
+
+</body>
+</html>

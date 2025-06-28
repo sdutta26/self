@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kashmir Travel Essentials</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fafbfc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 360px;
+    }
+
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      height: 48px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: #0077cc;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .navbar a.active {
+      font-weight: 600;
+      border-bottom: 2px solid #0077cc;
+      color: #222;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+      margin: 40px auto;
+      background: #fff;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .section {
+      padding: 24px 0;
+    }
+
+    .essentials-box {
+      background: #eaf4fb;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .essentials-row {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .rating-badge {
+      display: inline-block;
+      background: #1bb76e;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 3px 10px;
+      font-size: 15px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .ratings-count {
+      color: #555;
+      font-size: 13px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      color: #222;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns = 2 rows for 6 items */
+      gap: 20px;
+      padding: 0 12px;
+      justify-items: center;
+    }
+
+    .place-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      width: 100%;
+    }
+
+
+    .place-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .attraction-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+    .place-card p {
+      padding: 10px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 16px 8px;
+      }
+
+      .section {
+        padding: 16px 8px;
+      }
+
+      .essentials-box {
+        padding: 14px 8px;
+      }
+
+      .places-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+      }
+    }
+
+    .image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="tour.html" class="active">Tour</a>
+    <a href="mountain.html" class="active">Back to mountain</a>
+  
+  </div>
+
+ <div class="container">
+    <div class="section">
+      <h2> Munnar Travel Essentials</h2>
+      <div class="essentials-box">
+        <div class="essentials-row">
+          <span class="rating-badge">4.8 / 5</span>
+          <span class="ratings-count">(77 ratings)</span>
+        </div>
+        <div class="essentials-row"><strong>Weather:</strong> 16 - 22°C</div>
+        <div class="essentials-row"><strong>Ideal duration:</strong>7 days</div>
+        <div class="essentials-row"><strong>Best Time:</strong>  September to May </div>
+      </div>
+
+      <!-- Attractions horizontally scrollable -->
+    <div class="attractions-container">
+      <div class="attraction-card">
+        <h3 style="margin: 16px;">"Kashmir of South India"
+Munnar Tourism</h3>
+ <div class="image-wrapper">
+        <img src="https://www.holidify.com/images/bgImages/MUNNAR.jpg"/>    <div class="image-text">7 days / 6 nights</div>
+  </div>
+
+        <div class="content">
+          <div class="tourism-desc">
+           Famous for the tea estates, greenery, winding roads, blanket of mist, and viewpoints, Munnar is a hill station in Kerala, located in the Idukki district.
+          <span class="dots">...</span>
+        <span class="moreText" style="display: none;">
+
+            Lying in the Western Ghats at 1600 metres, it is one of the most sought after and visited travel destinations globally, especially popular amongst honeymooners.
+
+Once the summer resort of the erstwhile British government, the main reason to visit Munnar is to explore the sprawling tea plantations and the exotic flora and fauna. The Eravikulam National Park, Salim Ali Bird Sanctuary and tea plantations are its major attractions. Munnar is also famous for being home to the rare Neelakurinji flowers that bloom once in 12 years (the next bloom is in 2030) and the endangered Nilgiri Tahr.
+
+Munnar is divided into Old Munnar, where the tourist information office is, and Munnar, where the bus station and most guest houses are located. It is also an ideal place for trekking, camping, paragliding and boating. As it's a hilly region, Jeep safari is also a popular activity to experience. Munnar is often visited along with Alleppey and Thekkady, the two most popular tourist destinations in Kerala.
+
+</p>
+</span>
+        <a href="#" class="readMoreLink" onclick="toggleReadMore(this); return false;">Read More</a>
+          </div>
+        </div>
+
+        
+        <h1>Places To Visit In </h1>
+      <div class="places-grid">
+        <div class="place-card">
+          <img src="https://www.holidify.com/images/cmsuploads/square/4730323449_3b9ac3a760_b_20180331125322.jpg"/>
+          <p>mattupetty Dam</p>
+        </div>
+        <div class="place-card">
+          <img src="https://media.holidify.com/images/cmsuploads/square/1200px-Kolukkumalai_20250207212515_20250207212551.jpg"/>
+          <p>Kolukkumalai Tea Estate</p>
+        </div>
+        <div class="place-card">
+          <img src="https://media.holidify.com/images/cmsuploads/square/top-station-munnar-kerala-1-attr-hero_20250207214228_20250207214307.jpg">
+          <p>Top Ststion</p>
+        </div>
+        <div class="place-card">
+          <img src="https://media.holidify.com/images/cmsuploads/square/9234151911373087066334793098820415892488192n_20250207215141_20250207215218.jpg"/>
+          <p>pothamedu View point</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- JavaScript to toggle read more -->
+<script>
+  function toggleReadMore(link) {
+    const parent = link.closest(".tourism-desc");
+    const moreText = parent.querySelector(".moreText");
+    const dots = parent.querySelector(".dots");
+
+    if (moreText.style.display === "none") {
+      moreText.style.display = "inline";
+      dots.style.display = "none";
+      link.textContent = "Read Less";
+    } else {
+      moreText.style.display = "none";
+      dots.style.display = "inline";
+      link.textContent = "Read More";
+    }
+  }
+</script>
+
+</body>
+</html>

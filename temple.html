@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tour</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Remixicon & Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f6fc;
+      color: #333;
+    }
+
+    nav {
+      background-color: #007bff;
+      padding: 12px 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 25px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #cce5ff;
+    }
+
+    .section__container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section__header {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .section__description {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .journey__grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .journey__card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      width: 300px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .journey__card:hover {
+      transform: translateY(-5px);
+    }
+
+    .journey__card h4 {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .showcase__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .destination-card {
+      background-color: white;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .destination-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .destination-card h3 {
+      font-size: 22px;
+      margin-top: 15px;
+    }
+
+    .destination-card p {
+      font-size: 15px;
+      color: #666;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #e84118;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background-color: #ff5733;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #ff3b00;
+    }
+
+    @media (max-width: 768px) {
+      .destination-card {
+        width: 100%;
+      }
+
+      .showcase__container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+   
+    <a href="tour.html">Tour</a>
+   
+    <a href="ab.html">About </a>
+    <a href="contact.html">contact</a>
+  </nav>
+ 
+
+  <!-- ✅ Destination Packages Section -->
+  <section class="section__container showcase__container" id="destination">
+    <h2 class="section__header">Explore Our Top Destinations</h2>
+    <p class="section__description">Choose your next dream destination and book your trip!</p>
+
+ <!-- ✅ Temple Packages Section -->
+<section class="section__container showcase__container" id="temples">
+  <h2 class="section__header">Explore Famous Temples</h2>
+  <p class="section__description">Discover spiritual places and plan your temple tour!</p>
+
+  <!-- Golden Temple -->
+  <div class="destination-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPhdeGne2Nv0V1RNj39o6nPCfTON0yIWrtCw&s" alt="Golden Temple" />
+    <h3>Golden Temple</h3>
+    <p>The holiest shrine of Sikhism located in Amritsar.</p>
+    <div class="price">Rs.10,000 per person</div>
+    <a href="trip3.html?destination=Golden%20Temple&price=10000">
+      <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+    </a>
+    <div class="service-item">
+      <i class="fas fa-map-signs"></i>
+      <h3>Travel Guide</h3>
+      <a href="golden.html">Read more</a>
+    </div>
+  </div>
+
+  <!-- Meenakshi Temple -->
+  <div class="destination-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAlI4nJm3Zwy_ZMJq08iQ1MspeamJkhOru3g&s" alt="Meenakshi Temple" />
+    <h3>Meenakshi Temple</h3>
+    <p>Famous historic Hindu temple located in Madurai.</p>
+    <div class="price">Rs.12,500 per person</div>
+    <a href="trip3.html?destination=Meenakshi%20Temple&price=8500">
+      <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+    </a>
+    <div class="service-item">
+      <i class="fas fa-map-signs"></i>
+      <h3>Travel Guide</h3>
+      <a href="meenakshi.html">Read more</a>
+    </div>
+  </div>
+
+  <!-- Kedarnath Temple -->
+  <div class="destination-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS221K5efC57YvXWt_lii4IIlPzTz5JzgwIw&s" alt="Kedarnath Temple" />
+    <h3>Kedarnath Temple</h3>
+    <p>One of the twelve Jyotirlingas, located in the Himalayas.</p>
+    <div class="price">Rs.15,000 per person</div>
+    <a href="trip3.html?destination=Kedarnath%20Temple&price=15000">
+      <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+    </a>
+    <div class="service-item">
+      <i class="fas fa-map-signs"></i>
+      <h3>Travel Guide</h3>
+      <a href="kedarnath.html">Read more</a>
+    </div>
+  </div>
+
+  
+
+  <!-- Somnath Temple -->
+  <div class="destination-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVibLgGBwCP1-AIQJIKsQoeSPtKRW6xNAJtg&s" alt="Somnath Temple" />
+    <h3>Somnath Temple</h3>
+    <p>One of the twelve Jyotirlinga shrines of Shiva located in Gujarat.</p>
+    <div class="price">Rs.11,500 per person</div>
+    <a href="trip3.html?destination=Somnath%20Temple&price=11500">
+      <button class="btn">Book This Trip <i class="ri-arrow-right-line"></i></button>
+    </a>
+    <div class="service-item">
+      <i class="fas fa-map-signs"></i>
+      <h3>Travel Guide</h3>
+      <a href="somnath.html">Read more</a>
+    </div>
+  </div>
+</section>
+
+  </body>
+  </html>
